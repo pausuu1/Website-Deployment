@@ -22,16 +22,17 @@
 
         /* HEADER */
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: #0a0a0a;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 25px 50px;
-            height: 80px;
             box-sizing: border-box;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #0a0a0a;
             z-index: 10;
         }
 
@@ -98,7 +99,7 @@
             animation: fade 0.4s ease;
         }
 
-        /* Default section (home) */
+        /* Default visible section */
         #home {
             display: block;
         }
@@ -108,8 +109,8 @@
             display: block;
         }
 
-        /* Hide home when another section is targeted */
-        body:has(.section:target) #home {
+        /* Hide home ONLY when another section is targeted */
+        :target:not(#home) ~ #home {
             display: none;
         }
 
