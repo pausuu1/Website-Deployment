@@ -11,20 +11,68 @@
             font-family: 'Space Grotesk', sans-serif;
             background-color: #0a0a0a;
             color: #eaeaea;
-            padding: 50px;
         }
-        a { color: #FF3B3B; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #FF3B3B;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #eaeaea;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #FF3B3B;
+        }
+
+        .content {
+            padding: 80px 50px;
+        }
+
+        h1 {
+            font-size: 60px;
+            color: #FF3B3B;
+        }
+
+        p {
+            max-width: 700px;
+            color: #bdbdbd;
+        }
     </style>
 </head>
+
 <body>
 
-<h1 style="color:#FF3B3B;">Contact</h1>
-<p>You can reach me on any of my socials or email me at:</p>
+<header>
+    <div class="logo">PAUSUU</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
-<p style="color:#FF3B3B; font-size:20px;">your-email@example.com</p>
+<div class="content">
+    <h1>Contact</h1>
+    <p>You can reach me on any of my socials or email me at:</p>
 
-<a href="index.html">← Back to Home</a>
+    <p style="color:#FF3B3B; font-size:20px;">your-email@example.com</p>
+</div>
 
 </body>
 </html>
