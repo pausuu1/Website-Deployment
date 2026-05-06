@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pausuu | Portfolio</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0a0a0a;
+            color: #eaeaea;
+            overflow-x: hidden;
+        }
+
+        /* Glow effect */
+        .glow {
+            text-shadow: 0 0 10px #FF3B3B, 0 0 20px #FF3B3B;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #FF3B3B;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #eaeaea;
+            font-weight: 500;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #FF3B3B;
+        }
+
+        /* Sections */
+        .section {
+            display: none;
+            padding: 80px 50px;
+            animation: fade 0.4s ease-in-out;
+        }
+
+        .active {
+            display: block;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero */
+        .hero h1 {
+            font-size: 80px;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 22px;
+            max-width: 600px;
+            margin-top: 15px;
+            color: #bdbdbd;
+        }
+
+        .buttons {
+            margin-top: 40px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 12px 28px;
+            margin-right: 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #FF3B3B;
+            color: #0a0a0a;
+            box-shadow: 0 0 12px #FF3B3B;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff6b6b;
+        }
+
+        .btn-outline {
+            border: 2px solid #FF3B3B;
+            color: #FF3B3B;
+        }
+
+        .btn-outline:hover {
+            background-color: #FF3B3B;
+            color: #0a0a0a;
+        }
+
+        /* Social icons */
+        .socials a {
+            margin-right: 20px;
+            color: #bdbdbd;
+            font-size: 22px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: #FF3B3B;
+            text-shadow: 0 0 10px #FF3B3B;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 80px;
+            color: #bdbdbd;
+            background: #0d0d0d;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo glow">PAUSUU</div>
+    <nav>
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('projects')">Projects</a>
+        <a onclick="showSection('about')">About</a>
+        <a onclick="showSection('contact')">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="section active hero">
+    <h1 class="glow">Pausuu</h1>
+    <p>Combining work, passion, and creativity to build entertaining experiences.</p>
+
+    <div class="buttons">
+        <a onclick="showSection('projects')" class="btn-primary">View Projects</a>
+        <a onclick="showSection('about')" class="btn-outline">About Me</a>
+    </div>
+
+    <div class="socials" style="margin-top:50px;">
+        <a href="https://www.youtube.com/@pausuu" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://discord.gg/4N5sf3aGKW" target="_blank"><i class="fa-brands fa-discord"></i></a>
+        <a href="https://www.twitch.tv/pausuugames" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+        <a href="https://x.com/pausuuofficial" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://github.com/pausuuofficial" target="_blank"><i class="fa-brands fa-github"></i></a>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+    <h1 class="glow">Projects</h1>
+    <p>Here are some of the things I'm working on. More coming soon.</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <h1 class="glow">About Me</h1>
+    <p>I'm Pausuu — a creator who loves building bold digital experiences.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <h1 class="glow">Contact</h1>
+    <p>You can reach me here:</p>
+
+    <p style="font-size:20px; line-height:1.8;">
+        <i class="fa-brands fa-discord" style="color:#FF3B3B;"></i> @pausuu<br>
+        <i class="fa-brands fa-x-twitter" style="color:#FF3B3B;"></i> @pausuuofficial<br>
+        <i class="fa-solid fa-envelope" style="color:#FF3B3B;"></i> pausuubusiness@gmail.com
+    </p>
+</section>
+
+<footer>
+    © 2026 Pausuu — All Rights Reserved
+</footer>
+
+<script>
+function showSection(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0, 0);
+}
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
