@@ -56,6 +56,42 @@
             flex: 1;
             padding: 40px 50px;
             box-sizing: border-box;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #bdbdbd;
+            margin-bottom: 40px;
+        }
+
+        .contact-box {
+            display: inline-block;
+            padding: 25px 40px;
+            border: 2px solid #FF3B3B;
+            border-radius: 8px;
+            transition: transform 0.25s ease, background 0.25s ease;
+        }
+
+        .contact-box:hover {
+            transform: scale(1.05);
+            background: #FF3B3B;
+            color: #0a0a0a;
+        }
+
+        .contact-box i {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .contact-email {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 5px;
         }
 
         footer {
@@ -110,21 +146,22 @@
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="latest-projects.html">Latest Projects</a>
         <a href="experience.html">Experience</a>
         <a href="contact.html">Contact</a>
+        <a href="links.html">Links</a>
+        <a href="credits.html">Credits</a>
     </nav>
 </header>
 
 <main class="fade-in">
-    <h1 class="slide-up">Contact</h1>
-    <p>You can reach me here:</p>
+    <h1 class="slide-up">Contact Me</h1>
+    <p>If you’d like to reach out for business, collaboration, or anything else, you can contact me here.</p>
 
-    <p style="font-size:20px; line-height:1.8;">
-        <i class="fa-brands fa-discord" style="color:#FF3B3B;"></i> @pausuu<br>
-        <i class="fa-brands fa-x-twitter" style="color:#FF3B3B;"></i> @pausuuofficial<br>
-        <i class="fa-solid fa-envelope" style="color:#FF3B3B;"></i> pausuubusiness@gmail.com
-    </p>
+    <a href="mailto:pausuubusiness@gmail.com" class="contact-box fade-in">
+        <i class="fa-solid fa-envelope"></i>
+        <div class="contact-email">pausuubusiness@gmail.com</div>
+    </a>
 </main>
 
 <footer>
