@@ -44,10 +44,12 @@
             text-decoration: none;
             color: #eaeaea;
             font-weight: 500;
+            transition: color 0.3s, transform 0.3s;
         }
 
         nav a:hover {
             color: #FF3B3B;
+            transform: translateY(-2px);
         }
 
         main {
@@ -71,6 +73,12 @@
             margin-left: 15px;
             color: #bdbdbd;
             font-size: 22px;
+            transition: transform 0.25s ease, color 0.25s ease;
+        }
+
+        .footer-socials a:hover {
+            transform: scale(1.2);
+            color: #FF3B3B;
         }
 
         /* Animations */
@@ -93,23 +101,6 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        nav a {
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        nav a:hover {
-            transform: translateY(-2px);
-        }
-
-        .footer-socials a {
-            transition: transform 0.25s ease, color 0.25s ease;
-        }
-
-        .footer-socials a:hover {
-            transform: scale(1.2);
-            color: #FF3B3B;
-        }
     </style>
 </head>
 <body>
@@ -120,6 +111,7 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
         <a href="contact.html">Contact</a>
     </nav>
 </header>
