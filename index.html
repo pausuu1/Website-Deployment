@@ -88,6 +88,7 @@
             padding: 60px 50px;
             animation: fade 0.4s ease;
             flex: 1;
+            min-height: calc(100vh - 150px); /* FIX: each section fills screen */
         }
 
         .active {
@@ -104,25 +105,23 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: calc(100vh - 150px);
+            align-items: center;
+            text-align: center;
         }
 
         #home h1 {
             font-size: 90px;
-            margin: 0 auto;
-            text-align: center;
+            margin: 0;
         }
 
         #home p {
-            text-align: center;
-            margin: 15px auto;
+            margin-top: 15px;
             max-width: 600px;
             color: #bdbdbd;
         }
 
         .buttons {
-            margin: 30px auto;
-            text-align: center;
+            margin-top: 30px;
         }
 
         .buttons a {
@@ -152,8 +151,7 @@
         }
 
         .socials {
-            margin: 40px auto;
-            text-align: center;
+            margin-top: 40px;
         }
 
         .socials a {
