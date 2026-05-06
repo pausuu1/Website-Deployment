@@ -44,10 +44,12 @@
             text-decoration: none;
             color: #eaeaea;
             font-weight: 500;
+            transition: color 0.3s, transform 0.3s;
         }
 
         nav a:hover {
             color: #FF3B3B;
+            transform: translateY(-2px);
         }
 
         main {
@@ -83,6 +85,7 @@
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
+            transition: transform 0.25s ease, background 0.25s ease;
         }
 
         .btn-primary {
@@ -100,6 +103,10 @@
             color: #0a0a0a;
         }
 
+        .buttons a:hover {
+            transform: scale(1.05);
+        }
+
         footer {
             height: 60px;
             background: #0d0d0d;
@@ -115,6 +122,12 @@
             margin-left: 15px;
             color: #bdbdbd;
             font-size: 22px;
+            transition: transform 0.25s ease, color 0.25s ease;
+        }
+
+        .footer-socials a:hover {
+            transform: scale(1.2);
+            color: #FF3B3B;
         }
 
         /* Animations */
@@ -137,31 +150,6 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        nav a {
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        nav a:hover {
-            transform: translateY(-2px);
-        }
-
-        .buttons a {
-            transition: transform 0.25s ease, background 0.25s ease;
-        }
-
-        .buttons a:hover {
-            transform: scale(1.05);
-        }
-
-        .footer-socials a {
-            transition: transform 0.25s ease, color 0.25s ease;
-        }
-
-        .footer-socials a:hover {
-            transform: scale(1.2);
-            color: #FF3B3B;
-        }
     </style>
 </head>
 <body>
@@ -183,6 +171,7 @@
 
     <div class="buttons">
         <a href="about.html" class="btn-outline">About Me</a>
+        <a href="experience.html" class="btn-outline">Experience</a>
         <a href="contact.html" class="btn-primary">Contact</a>
     </div>
 </main>
