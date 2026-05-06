@@ -17,10 +17,7 @@
             font-family: 'Space Grotesk', sans-serif;
             background-color: #0a0a0a;
             color: #eaeaea;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            overflow: hidden; /* prevents scrolling */
         }
 
         /* HEADER */
@@ -29,7 +26,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 25px 50px;
-            z-index: 10;
+            height: 80px;
+            box-sizing: border-box;
         }
 
         .logo {
@@ -82,13 +80,14 @@
             color: #FF3B3B;
         }
 
-        /* SECTIONS */
+        /* SECTIONS (full screen minus header/footer) */
         .section {
             display: none;
-            padding: 60px 50px;
+            height: calc(100vh - 80px - 60px); /* header + footer */
+            padding: 40px 50px;
             animation: fade 0.4s ease;
-            flex: 1;
-            min-height: calc(100vh - 150px); /* FIX: each section fills screen */
+            overflow-y: auto;
+            box-sizing: border-box;
         }
 
         .active {
@@ -150,29 +149,31 @@
             color: #0a0a0a;
         }
 
-        .socials {
-            margin-top: 40px;
+        /* FOOTER FIXED */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: #0d0d0d;
+            color: #bdbdbd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            box-sizing: border-box;
         }
 
-        .socials a {
-            margin: 0 12px;
+        .footer-socials a {
+            margin-left: 15px;
             color: #bdbdbd;
-            font-size: 24px;
+            font-size: 22px;
             transition: 0.3s;
         }
 
-        .socials a:hover {
+        .footer-socials a:hover {
             color: #FF3B3B;
-        }
-
-        /* FOOTER ALWAYS AT BOTTOM */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #0d0d0d;
-            color: #bdbdbd;
-            font-size: 14px;
-            margin-top: auto;
         }
 
         /* RESPONSIVE */
@@ -223,14 +224,6 @@
         <a onclick="showSection('projects')" class="btn-primary">View Projects</a>
         <a onclick="showSection('about')" class="btn-outline">About Me</a>
     </div>
-
-    <div class="socials">
-        <a href="https://www.youtube.com/@pausuu" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-        <a href="https://discord.gg/4N5sf3aGKW" target="_blank"><i class="fa-brands fa-discord"></i></a>
-        <a href="https://www.twitch.tv/pausuugames" target="_blank"><i class="fa-brands fa-twitch"></i></a>
-        <a href="https://x.com/pausuuofficial" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://github.com/pausuuofficial" target="_blank"><i class="fa-brands fa-github"></i></a>
-    </div>
 </section>
 
 <!-- PROJECTS -->
@@ -258,14 +251,21 @@
 </section>
 
 <footer>
-    © 2026 Pausuu — All Rights Reserved
+    <div>© 2026 Pausuu</div>
+
+    <div class="footer-socials">
+        <a href="https://www.youtube.com/@pausuu" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://discord.gg/4N5sf3aGKW" target="_blank"><i class="fa-brands fa-discord"></i></a>
+        <a href="https://www.twitch.tv/pausuugames" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+        <a href="https://x.com/pausuuofficial" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://github.com/pausuuofficial" target="_blank"><i class="fa-brands fa-github"></i></a>
+    </div>
 </footer>
 
 <script>
 function showSection(id) {
     document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
     document.getElementById(id).classList.add('active');
-    window.scrollTo(0, 0);
 }
 
 function toggleMenu() {
