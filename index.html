@@ -17,10 +17,9 @@
             font-family: 'Space Grotesk', sans-serif;
             background-color: #0a0a0a;
             color: #eaeaea;
-            overflow: hidden; /* prevents scrolling */
+            overflow: hidden;
         }
 
-        /* HEADER */
         header {
             display: flex;
             justify-content: space-between;
@@ -54,7 +53,6 @@
             color: #FF3B3B;
         }
 
-        /* MOBILE MENU */
         .hamburger {
             display: none;
             font-size: 28px;
@@ -80,10 +78,9 @@
             color: #FF3B3B;
         }
 
-        /* SECTIONS (full screen minus header/footer) */
         .section {
             display: none;
-            height: calc(100vh - 80px - 60px); /* header + footer */
+            height: calc(100vh - 80px - 60px);
             padding: 40px 50px;
             animation: fade 0.4s ease;
             overflow-y: auto;
@@ -99,7 +96,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* HOME CENTERING */
         #home {
             display: flex;
             flex-direction: column;
@@ -149,7 +145,6 @@
             color: #0a0a0a;
         }
 
-        /* FOOTER FIXED */
         footer {
             position: fixed;
             bottom: 0;
@@ -176,7 +171,6 @@
             color: #FF3B3B;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 800px) {
             nav {
                 display: none;
@@ -197,10 +191,10 @@
     <div class="logo">PAUSUU</div>
 
     <nav>
-        <a onclick="showSection('home')">Home</a>
-        <a onclick="showSection('projects')">Projects</a>
-        <a onclick="showSection('about')">About</a>
-        <a onclick="showSection('contact')">Contact</a>
+        <a href="javascript:void(0)" onclick="showSection('home')">Home</a>
+        <a href="javascript:void(0)" onclick="showSection('projects')">Projects</a>
+        <a href="javascript:void(0)" onclick="showSection('about')">About</a>
+        <a href="javascript:void(0)" onclick="showSection('contact')">Contact</a>
     </nav>
 
     <div class="hamburger" onclick="toggleMenu()">
@@ -209,36 +203,32 @@
 </header>
 
 <div class="mobile-nav" id="mobileNav">
-    <a onclick="showSection('home'); toggleMenu()">Home</a>
-    <a onclick="showSection('projects'); toggleMenu()">Projects</a>
-    <a onclick="showSection('about'); toggleMenu()">About</a>
-    <a onclick="showSection('contact'); toggleMenu()">Contact</a>
+    <a href="javascript:void(0)" onclick="showSection('home'); toggleMenu()">Home</a>
+    <a href="javascript:void(0)" onclick="showSection('projects'); toggleMenu()">Projects</a>
+    <a href="javascript:void(0)" onclick="showSection('about'); toggleMenu()">About</a>
+    <a href="javascript:void(0)" onclick="showSection('contact'); toggleMenu()">Contact</a>
 </div>
 
-<!-- HOME -->
 <section id="home" class="section active">
     <h1>Pausuu</h1>
     <p>Combining work, passion, and creativity to build entertaining experiences.</p>
 
     <div class="buttons">
-        <a onclick="showSection('projects')" class="btn-primary">View Projects</a>
-        <a onclick="showSection('about')" class="btn-outline">About Me</a>
+        <a href="javascript:void(0)" onclick="showSection('projects')" class="btn-primary">View Projects</a>
+        <a href="javascript:void(0)" onclick="showSection('about')" class="btn-outline">About Me</a>
     </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects" class="section">
     <h1>Projects</h1>
     <p>Here are some of the things I'm working on. More coming soon.</p>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="section">
     <h1>About Me</h1>
     <p>I'm Pausuu — a creator who loves building bold digital experiences.</p>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section">
     <h1>Contact</h1>
     <p>You can reach me here:</p>
