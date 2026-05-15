@@ -16,34 +16,51 @@
     body {
       background: #0d0d0d;
       color: #fff;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
       padding: 40px 20px;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      opacity: 0.85;
+      transition: 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      border-bottom: 1px solid #ffffff60;
+    }
+
+    /* MAIN CONTENT */
+    .center {
+      margin-top: 120px;
+      text-align: center;
     }
 
     h1 {
       font-size: 3rem;
-      font-weight: 700;
       margin-bottom: 10px;
-      text-align: center;
     }
 
     p {
       font-size: 1.2rem;
       opacity: 0.8;
-      text-align: center;
-      max-width: 600px;
       margin-bottom: 40px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
     }
 
     .btn {
@@ -66,14 +83,18 @@
 
 <body>
 
-  <h1>Welcome to Pausuu</h1>
-  <p>Your space on the internet — simple, clean, and expanding soon.</p>
+  <!-- NAV -->
+  <nav>
+    <a href="/main-deployment">Home</a>
+    <a href="/main-deployment/contact">Contact</a>
+  </nav>
 
-  <div class="buttons">
-    <a href="/about" class="btn">About</a>
-    <a href="/projects" class="btn">Projects</a>
-    <a href="/contact" class="btn">Contact</a>
-    <a href="/example" class="btn">Example</a>
+  <!-- MAIN -->
+  <div class="center">
+    <h1>Welcome to Pausuu</h1>
+    <p>Your space on the internet — simple, clean, and expanding soon.</p>
+
+    <a href="/main-deployment/contact" class="btn">Contact</a>
   </div>
 
 </body>
