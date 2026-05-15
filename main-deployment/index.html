@@ -21,7 +21,6 @@
       flex-direction: column;
     }
 
-    /* NAVIGATION */
     nav {
       position: fixed;
       top: 25px;
@@ -45,7 +44,6 @@
       border-bottom: 1px solid #ffffff60;
     }
 
-    /* CENTER CONTENT */
     .center {
       flex: 1;
       display: flex;
@@ -84,18 +82,47 @@
       background: #ffffff20;
       border-color: #ffffff40;
     }
+
+    .links-section {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .links-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .links-row {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .links-row img {
+      width: 34px;
+      height: 34px;
+      opacity: 0.75;
+      transition: 0.2s ease;
+      filter: invert(1);
+    }
+
+    .links-row img:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href="/main-deployment">Home</a>
     <a href="/main-deployment/contact">Contact</a>
+    <a href="/main-deployment/links">Links</a>
   </nav>
 
-  <!-- CENTERED PROFILE CONTENT -->
   <div class="center">
 
     <h1>Pausuu</h1>
@@ -105,6 +132,36 @@
     </div>
 
     <a href="/main-deployment/contact" class="btn">Contact</a>
+
+    <div class="links-section">
+      <h2>Links</h2>
+
+      <div class="links-row">
+        <a href="https://youtube.com/@pausuu" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg">
+        </a>
+
+        <a href="https://x.com/pausuuofficial" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg">
+        </a>
+
+        <a href="https://tiktok.com/@officialpausuu" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg">
+        </a>
+
+        <a href="https://twitch.tv/pausuugames" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitch.svg">
+        </a>
+
+        <a href="https://discord.gg/4N5sf3aGKW" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg">
+        </a>
+
+        <a href="https://github.com/pausuu1" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg">
+        </a>
+      </div>
+    </div>
 
   </div>
 
