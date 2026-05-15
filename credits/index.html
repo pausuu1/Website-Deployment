@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credits – Pausuu</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: #0d0d0d;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 20px;
+      right: 25px;
+      display: flex;
+      gap: 25px;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      opacity: 0.85;
+      transition: 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      border-bottom: 1px solid #ffffff60;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .credit-item {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      margin: 10px 0;
+    }
+
+    .credit-item a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #ffffff30;
+      transition: 0.2s ease;
+    }
+
+    .credit-item a:hover {
+      border-bottom-color: #ffffff80;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/contact">Contact</a>
+    <a href="/links">Links</a>
+    <a href="/credits">Credits</a>
+  </nav>
+
+  <h1>Credits</h1>
+
+  <div class="credit-item">Website created by <strong>Pausuu</strong></div>
+  <div class="credit-item">Domain hosted by <a href="https://www.hostinger.com" target="_blank">Hostinger</a></div>
+  <div class="credit-item">Icons provided by <a href="https://simpleicons.org" target="_blank">Simple Icons</a></div>
+  <div class="credit-item">Site hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a></div>
+
+</body>
+</html>
