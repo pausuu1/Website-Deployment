@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Links – Pausuu</title>
+  <title>Pausuu</title>
 
   <style>
+    html, body {
+      overflow: hidden;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -21,7 +25,6 @@
       flex-direction: column;
     }
 
-    /* NAVIGATION */
     nav {
       position: fixed;
       top: 25px;
@@ -45,7 +48,6 @@
       border-bottom: 1px solid #ffffff60;
     }
 
-    /* CENTER CONTENT */
     .center {
       flex: 1;
       display: flex;
@@ -56,7 +58,6 @@
       padding: 20px;
     }
 
-    /* ZOOM ANIMATION */
     @keyframes zoomPulse {
       0% { transform: scale(1); opacity: 0.85; }
       50% { transform: scale(1.08); opacity: 1; }
@@ -68,50 +69,21 @@
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 25px;
+      font-size: 3rem;
+      margin-bottom: 15px;
     }
 
-    /* ICON GRID */
-    .links-grid {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 10px;
-    }
-
-    .icon-btn {
-      width: 55px;
-      height: 55px;
-      padding: 12px;
-      background: #ffffff10;
-      border: 1px solid #ffffff20;
-      border-radius: 12px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.2s ease;
-      cursor: pointer;
-    }
-
-    .icon-btn:hover {
-      background: #ffffff20;
-      border-color: #ffffff40;
-      transform: scale(1.08);
-    }
-
-    .icon-btn img {
-      width: 28px;
-      height: 28px;
-      filter: invert(1);
+    .bio {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      max-width: 600px;
+      line-height: 1.5;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href="/main-deployment">Home</a>
     <a href="/main-deployment/contact">Contact</a>
@@ -119,35 +91,9 @@
     <a href="/main-deployment/credits">Credits</a>
   </nav>
 
-  <!-- CENTERED CONTENT WITH ANIMATION -->
   <div class="center animated-text">
-    <h1>My Links</h1>
-
-    <div class="links-grid">
-      <a class="icon-btn" href="https://youtube.com" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg">
-      </a>
-
-      <a class="icon-btn" href="https://twitter.com" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg">
-      </a>
-
-      <a class="icon-btn" href="https://tiktok.com" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg">
-      </a>
-
-      <a class="icon-btn" href="https://twitch.tv" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitch.svg">
-      </a>
-
-      <a class="icon-btn" href="https://discord.com" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg">
-      </a>
-
-      <a class="icon-btn" href="https://github.com" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg">
-      </a>
-    </div>
+    <h1>Pausuu</h1>
+    <div class="bio">Content creator, video editor, and programmer.</div>
   </div>
 
 </body>
