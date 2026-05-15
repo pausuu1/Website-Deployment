@@ -6,6 +6,10 @@
   <title>Links – Pausuu</title>
 
   <style>
+    html, body {
+      overflow: hidden;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -56,26 +60,41 @@
 
     h1 {
       font-size: 2.5rem;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
-    .links-row {
+    .links-grid {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .icon-btn {
+      width: 55px;
+      height: 55px;
+      padding: 12px;
+      background: #ffffff10;
+      border: 1px solid #ffffff20;
+      border-radius: 12px;
       display: flex;
       justify-content: center;
-      gap: 28px;
-    }
-
-    .links-row img {
-      width: 40px;
-      height: 40px;
-      opacity: 0.75;
+      align-items: center;
       transition: 0.2s ease;
-      filter: invert(1);
+      cursor: pointer;
     }
 
-    .links-row img:hover {
-      opacity: 1;
-      transform: scale(1.1);
+    .icon-btn:hover {
+      background: #ffffff20;
+      border-color: #ffffff40;
+      transform: scale(1.08);
+    }
+
+    .icon-btn img {
+      width: 28px;
+      height: 28px;
+      filter: invert(1);
     }
   </style>
 </head>
@@ -86,37 +105,36 @@
     <a href="/main-deployment">Home</a>
     <a href="/main-deployment/contact">Contact</a>
     <a href="/main-deployment/links">Links</a>
+    <a href="/main-deployment/credits">Credits</a>
   </nav>
 
   <div class="center">
     <h1>My Links</h1>
 
-    <div class="links-row">
-
-      <a href="https://youtube.com/@pausuu" target="_blank">
+    <div class="links-grid">
+      <a class="icon-btn" href="https://youtube.com" target="_blank">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg">
       </a>
 
-      <a href="https://x.com/pausuuofficial" target="_blank">
+      <a class="icon-btn" href="https://twitter.com" target="_blank">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg">
       </a>
 
-      <a href="https://tiktok.com/@officialpausuu" target="_blank">
+      <a class="icon-btn" href="https://tiktok.com" target="_blank">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg">
       </a>
 
-      <a href="https://twitch.tv/pausuugames" target="_blank">
+      <a class="icon-btn" href="https://twitch.tv" target="_blank">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitch.svg">
       </a>
 
-      <a href="https://discord.gg/4N5sf3aGKW" target="_blank">
+      <a class="icon-btn" href="https://discord.com" target="_blank">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg">
       </a>
 
-      <a href="https://github.com/pausuu1" target="_blank">
+      <a class="icon-btn" href="https://github.com" target="_blank">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg">
       </a>
-
     </div>
   </div>
 
