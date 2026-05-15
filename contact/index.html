@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Pausuu</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: #0d0d0d;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      overflow: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 20px;
+      right: 25px;
+      display: flex;
+      gap: 25px;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      opacity: 0.85;
+      transition: 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      border-bottom: 1px solid #ffffff60;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      text-align: center;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .contact-box {
+      background: #ffffff10;
+      border: 1px solid #ffffff20;
+      padding: 25px 35px;
+      border-radius: 10px;
+      text-align: left;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .item {
+      margin: 15px 0;
+      font-size: 1rem;
+    }
+
+    .label {
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+
+    .value {
+      font-size: 1.1rem;
+      margin-top: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/contact">Contact</a>
+    <a href="/links">Links</a>
+    <a href="/credits">Credits</a>
+  </nav>
+
+  <h1>Contact Me</h1>
+  <p>Reach out through any of the platforms below.</p>
+
+  <div class="contact-box">
+    <div class="item">
+      <div class="label">Discord</div>
+      <div class="value">@pausuu</div>
+    </div>
+
+    <div class="item">
+      <div class="label">Twitter</div>
+      <div class="value">@pausuu</div>
+    </div>
+
+    <div class="item">
+      <div class="label">Email</div>
+      <div class="value">pausuubusiness@gmail.com</div>
+    </div>
+  </div>
+
+</body>
+</html>
