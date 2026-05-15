@@ -1,55 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pausuu</title>
 
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background: #0d0d0d;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
 
-        h1 {
-            font-size: 3rem;
-            margin: 0;
-            letter-spacing: 2px;
-        }
+    body {
+      background: #0d0d0d;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        p {
-            margin-top: 0.5rem;
-            opacity: 0.7;
-            font-size: 1.1rem;
-        }
+    nav {
+      position: fixed;
+      top: 25px;
+      right: 35px;
+      display: flex;
+      gap: 25px;
+      z-index: 10;
+    }
 
-        .pulse {
-            margin-top: 2rem;
-            width: 12px;
-            height: 12px;
-            background: #ffffff;
-            border-radius: 50%;
-            animation: pulse 1.5s infinite ease-in-out;
-        }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      opacity: 0.85;
+      transition: 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
 
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.6; }
-            50% { transform: scale(1.6); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.6; }
-        }
-    </style>
+    nav a:hover {
+      opacity: 1;
+      border-bottom: 1px solid #ffffff60;
+    }
+
+    .center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .bio {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      max-width: 600px;
+      margin-bottom: 40px;
+      line-height: 1.5;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 8px;
+      background: #ffffff10;
+      border: 1px solid #ffffff20;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #ffffff20;
+      border-color: #ffffff40;
+    }
+
+    .links-section {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .links-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .links-row {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .links-row img {
+      width: 34px;
+      height: 34px;
+      opacity: 0.75;
+      transition: 0.2s ease;
+      filter: invert(1);
+    }
+
+    .links-row img:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Coming Soon</h1>
-    <p>pausuu.xyz is under construction</p>
-    <div class="pulse"></div>
+
+  <nav>
+    <a href="/main-deployment">Home</a>
+    <a href="/main-deployment/contact">Contact</a>
+    <a href="/main-deployment/links">Links</a>
+  </nav>
+
+  <div class="center">
+
+    <h1>Pausuu</h1>
+
+    <div class="bio">
+      Content creator, video editor, and programmer.
+    </div>
+
+    <a href="/main-deployment/contact" class="btn">Contact</a>
+
+    <div class="links-section">
+      <h2>Links</h2>
+
+      <div class="links-row">
+        <a href="https://youtube.com/@pausuu" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg">
+        </a>
+
+        <a href="https://x.com/pausuuofficial" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg">
+        </a>
+
+        <a href="https://tiktok.com/@officialpausuu" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg">
+        </a>
+
+        <a href="https://twitch.tv/pausuugames" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitch.svg">
+        </a>
+
+        <a href="https://discord.gg/4N5sf3aGKW" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg">
+        </a>
+
+        <a href="https://github.com/pausuu1" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg">
+        </a>
+      </div>
+    </div>
+
+  </div>
+
 </body>
 </html>
