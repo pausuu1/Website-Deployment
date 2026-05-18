@@ -9,6 +9,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: #000;
@@ -33,17 +37,19 @@
     .logo {
       font-size: 1.2rem;
       opacity: 0.9;
+      white-space: nowrap;
     }
 
     nav {
       display: flex;
-      gap: 25px;
+      gap: 20px;
+      white-space: nowrap;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 0.95rem;
       opacity: 0.85;
       transition: 0.2s;
     }
@@ -54,17 +60,26 @@
 
     /* MAIN CONTENT */
     .content {
-      padding-top: 160px;
+      padding: 160px 20px 80px;
       text-align: center;
       max-width: 900px;
-      margin: auto;
+      margin: 0 auto;
     }
 
     .content h1 {
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       margin-bottom: 20px;
       position: relative;
       display: inline-block;
+      font-weight: 400;
+    }
+
+    .intro-prefix {
+      font-weight: 400;
+    }
+
+    #nameText {
+      font-weight: 700;
     }
 
     .content p {
@@ -74,13 +89,11 @@
       line-height: 1.6;
     }
 
-    /* SECTION TITLES */
     h2 {
       font-size: 2rem;
       margin-bottom: 40px;
     }
 
-    /* ICON ROWS */
     .icons {
       display: flex;
       justify-content: center;
@@ -91,13 +104,13 @@
 
     .icons img {
       width: 70px;
-      opacity: 0.85;
+      opacity: 0.9;
       transition: 0.2s;
     }
 
     .icons img:hover {
       opacity: 1;
-      transform: scale(1.1);
+      transform: scale(1.08);
     }
 
     /* PARTICLES */
@@ -126,46 +139,50 @@
 <div class="content">
 
   <!-- INTRO -->
-  <h1 id="introText">I'm pausuu</h1>
-  <p>a self-taught editor, programmer, and developer<br>
-  I like editing and coding for fun</p>
+  <h1>
+    <span class="intro-prefix">I'm </span><span id="nameText">pausuu</span>
+  </h1>
+  <p id="descText">
+    a self-taught editor, programmer, and developer<br>
+    I like editing and coding for fun
+  </p>
 
   <!-- SOFTWARES -->
   <h2>Softwares I Use</h2>
   <div class="icons">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
 
     <!-- NEW Premiere Pro Logo -->
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-plain.svg">
+    <img src="https://cdn.simpleicons.org/adobepremierepro/9999ff" alt="Premiere Pro">
 
     <!-- NEW After Effects Logo -->
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-plain.svg">
+    <img src="https://cdn.simpleicons.org/adobeaftereffects/9999ff" alt="After Effects">
 
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" alt="Blender">
   </div>
 
   <!-- CONTACT -->
   <h2>Contact Me</h2>
   <div class="icons">
     <!-- Email -->
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg">
+    <img src="https://cdn.simpleicons.org/gmail/ffffff" alt="Email">
 
     <!-- X (Twitter) -->
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg">
+    <img src="https://cdn.simpleicons.org/x/ffffff" alt="X">
 
     <!-- Discord -->
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/discord/discord-original.svg">
+    <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord">
   </div>
 
 </div>
 
 <script>
-  /* PARTICLES ON INTRO TEXT */
-  const intro = document.getElementById("introText");
-  const content = document.querySelector(".content");
+  const nameEl = document.getElementById("nameText");
+  const descEl = document.getElementById("descText");
 
-  function createParticle() {
+  function createParticleAround(el) {
+    const rect = el.getBoundingClientRect();
     const particle = document.createElement("div");
     particle.classList.add("particle");
 
@@ -173,9 +190,8 @@
     particle.style.width = size + "px";
     particle.style.height = size + "px";
 
-    const rect = intro.getBoundingClientRect();
-    const x = rect.left + rect.width / 2 + (Math.random() - 0.5) * 200;
-    const y = rect.top + window.scrollY + (Math.random() - 0.5) * 80;
+    const x = rect.left + rect.width / 2 + (Math.random() - 0.5) * rect.width;
+    const y = rect.top + window.scrollY + (Math.random() - 0.5) * rect.height;
 
     particle.style.left = x + "px";
     particle.style.top = y + "px";
@@ -192,7 +208,10 @@
     });
   }
 
-  setInterval(createParticle, 200);
+  setInterval(() => {
+    createParticleAround(nameEl);
+    createParticleAround(descEl);
+  }, 220);
 </script>
 
 </body>
