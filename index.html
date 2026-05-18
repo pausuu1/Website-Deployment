@@ -18,6 +18,7 @@
       overflow-x: hidden;
     }
 
+    /* HEADER */
     header {
       position: fixed;
       top: 0;
@@ -52,6 +53,7 @@
 
     nav a:hover { opacity: 1; }
 
+    /* MAIN CONTENT */
     .content {
       padding: 160px 20px 80px;
       max-width: 900px;
@@ -98,17 +100,18 @@
       margin-bottom: 80px;
     }
 
-    .icons img {
+    .icons img, .icons svg {
       width: 70px;
       opacity: 0.9;
       transition: 0.2s;
     }
 
-    .icons img:hover {
+    .icons img:hover, .icons svg:hover {
       opacity: 1;
       transform: scale(1.08);
     }
 
+    /* PARTICLES */
     .particle {
       position: absolute;
       width: 6px;
@@ -141,25 +144,22 @@
     I like editing and coding for fun
   </div>
 
-  <!-- SOFTWARES -->
-  <h2>Softwares I Use</h2>
-  <div class="icons">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
-
-    <!-- NEW Adobe Logos -->
-    <img src="https://cdn.brandicons.org/adobe-premiere-pro.svg" alt="Premiere Pro">
-    <img src="https://cdn.brandicons.org/adobe-after-effects.svg" alt="After Effects">
-
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" alt="Blender">
-  </div>
-
   <!-- CONTACT -->
   <h2>Contact Me</h2>
   <div class="icons">
-    <img src="https://cdn.simpleicons.org/inbox/ffffff" alt="Inbox">
+
+    <!-- Inbox Icon (inline SVG, guaranteed working) -->
+    <svg width="70" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 7l3-4h12l3 4v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+      <path d="M3 7h6l2 3h2l2-3h6"/>
+    </svg>
+
+    <!-- X (Twitter) -->
     <img src="https://cdn.simpleicons.org/x/ffffff" alt="X">
+
+    <!-- Discord -->
     <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord">
+
   </div>
 
 </div>
