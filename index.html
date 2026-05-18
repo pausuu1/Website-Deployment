@@ -3,26 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pausuu</title>
+  <title>pausuu.xyz</title>
 
   <style>
-    html, body {
-      overflow: hidden;
-      height: 100%;
+    body {
       margin: 0;
-      padding: 0;
-      font-family: "Inter", sans-serif;
       background: #0d0d0d;
       color: #fff;
+      font-family: "Inter", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 25px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0d0d0d;
+      z-index: 20;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      color: #fff;
+      opacity: 0.9;
+      letter-spacing: 0.5px;
     }
 
     nav {
-      position: fixed;
-      top: 20px;
-      right: 25px;
       display: flex;
       gap: 25px;
-      z-index: 10;
     }
 
     nav a {
@@ -39,53 +57,52 @@
       border-bottom: 1px solid #ffffff60;
     }
 
+    .divider {
+      margin-top: 90px;
+      width: 100%;
+      border: none;
+      border-top: 1px solid #ffffff20;
+    }
+
     .center {
-      height: 100vh;
-      width: 100vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       text-align: center;
+      width: 100%;
     }
 
-    @keyframes zoomPulse {
-      0% { transform: scale(1); opacity: 0.85; }
-      50% { transform: scale(1.08); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.85; }
-    }
-
-    .animated-text {
-      animation: zoomPulse 3s ease-in-out infinite;
-    }
-
-    h1 {
+    .center h1 {
       font-size: 3rem;
-      margin-bottom: 15px;
+      margin: 0;
+      opacity: 0.95;
     }
 
-    .bio {
+    .center p {
+      margin-top: 10px;
       font-size: 1.2rem;
-      opacity: 0.8;
-      max-width: 600px;
-      line-height: 1.5;
+      opacity: 0.7;
     }
   </style>
 </head>
 
 <body>
 
-  <nav>
-    <a href="/">Home</a>
-    <a href="/contact">Contact</a>
-    <a href="/links">Links</a>
-    <a href="/credits">Credits</a>
-  </nav>
+<header>
+  <div class="logo">pausuu.xyz</div>
 
-  <div class="center animated-text">
-    <h1>Pausuu</h1>
-    <div class="bio">Content creator, video editor, and programmer.</div>
-  </div>
+  <nav>
+    <a href="/main-deployment">Home</a>
+    <a href="/main-deployment/contact">Contact</a>
+  </nav>
+</header>
+
+<hr class="divider">
+
+<div class="center">
+  <h1>pausuu</h1>
+  <p>clean. minimal. intentional.</p>
+</div>
 
 </body>
 </html>
