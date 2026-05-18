@@ -5,12 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pausuu.xyz</title>
 
-  <!-- GSAP + ScrollTrigger -->
+  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-  <!-- Lenis Smooth Scroll -->
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
 
   <style>
     body {
@@ -32,7 +28,6 @@
       justify-content: space-between;
       align-items: center;
       z-index: 100;
-      background: transparent;
     }
 
     .logo {
@@ -57,49 +52,30 @@
       opacity: 1;
     }
 
-    /* HERO SECTION */
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    /* MAIN CONTENT */
+    .content {
+      padding-top: 160px;
       text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
       position: relative;
+      display: inline-block;
     }
 
-    .hero h1 {
-      font-size: 4rem;
-      margin: 0;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero p {
-      margin-top: 15px;
-      font-size: 1.3rem;
-      opacity: 0.7;
-      z-index: 2;
-    }
-
-    /* PARTICLES */
-    .particle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: #ffffff40;
-      border-radius: 50%;
-      pointer-events: none;
-      filter: blur(1px);
+    .content p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin-bottom: 60px;
+      line-height: 1.6;
     }
 
     /* SECTION TITLES */
-    .section {
-      padding: 120px 0;
-      text-align: center;
-    }
-
-    .section h2 {
+    h2 {
       font-size: 2rem;
       margin-bottom: 40px;
     }
@@ -110,6 +86,7 @@
       justify-content: center;
       gap: 40px;
       flex-wrap: wrap;
+      margin-bottom: 80px;
     }
 
     .icons img {
@@ -121,6 +98,17 @@
     .icons img:hover {
       opacity: 1;
       transform: scale(1.1);
+    }
+
+    /* PARTICLES */
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #ffffff40;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(1px);
     }
   </style>
 </head>
@@ -135,71 +123,47 @@
   </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <h1 id="nameText">pausuu</h1>
-  <p>I'm pausuu, a self-taught editor, programmer, and developer<br>
-  I like editing and coding for fun</p>
-</section>
+<div class="content">
 
-<!-- SOFTWARES -->
-<section class="section">
+  <!-- INTRO -->
+  <h1 id="introText">I'm pausuu</h1>
+  <p>a self-taught editor, programmer, and developer<br>
+  I like editing and coding for fun</p>
+
+  <!-- SOFTWARES -->
   <h2>Softwares I Use</h2>
   <div class="icons">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg">
+
+    <!-- NEW Premiere Pro Logo -->
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-plain.svg">
+
+    <!-- NEW After Effects Logo -->
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-plain.svg">
+
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg">
   </div>
-</section>
 
-<!-- CONTACT -->
-<section class="section">
+  <!-- CONTACT -->
   <h2>Contact Me</h2>
   <div class="icons">
+    <!-- Email -->
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg">
+
+    <!-- X (Twitter) -->
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg">
+
+    <!-- Discord -->
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/discord/discord-original.svg">
   </div>
-</section>
+
+</div>
 
 <script>
-  /* LENIS SMOOTH SCROLL */
-  const lenis = new Lenis({
-    duration: 1.2,
-    smooth: true,
-    direction: "vertical",
-    gestureDirection: "vertical",
-    smoothTouch: false,
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  /* GSAP FADE-IN ANIMATIONS */
-  gsap.from(".hero h1", { opacity: 0, y: 40, duration: 1.2, ease: "power3.out" });
-  gsap.from(".hero p", { opacity: 0, y: 20, duration: 1.2, delay: 0.3, ease: "power3.out" });
-
-  gsap.utils.toArray(".section").forEach((section) => {
-    gsap.from(section, {
-      scrollTrigger: {
-        trigger: section,
-        start: "top 80%",
-      },
-      opacity: 0,
-      y: 60,
-      duration: 1.2,
-      ease: "power3.out",
-    });
-  });
-
-  /* PARTICLE EFFECT AROUND NAME */
-  const hero = document.querySelector(".hero");
-  const nameText = document.getElementById("nameText");
+  /* PARTICLES ON INTRO TEXT */
+  const intro = document.getElementById("introText");
+  const content = document.querySelector(".content");
 
   function createParticle() {
     const particle = document.createElement("div");
@@ -209,13 +173,14 @@
     particle.style.width = size + "px";
     particle.style.height = size + "px";
 
-    const x = nameText.offsetLeft + nameText.offsetWidth / 2 + (Math.random() - 0.5) * 200;
-    const y = nameText.offsetTop + (Math.random() - 0.5) * 150;
+    const rect = intro.getBoundingClientRect();
+    const x = rect.left + rect.width / 2 + (Math.random() - 0.5) * 200;
+    const y = rect.top + window.scrollY + (Math.random() - 0.5) * 80;
 
     particle.style.left = x + "px";
     particle.style.top = y + "px";
 
-    hero.appendChild(particle);
+    document.body.appendChild(particle);
 
     gsap.to(particle, {
       opacity: 0,
