@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pausuu.xyz</title>
+
+    <!-- Load Inter font exactly like the screenshot -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
             background: #0d0d0d;
-            font-family: "Inter", Arial, sans-serif;
+            font-family: "Inter", sans-serif;
             display: flex;
             justify-content: center;
             padding-top: 40px;
         }
 
-        /* Center wrapper */
         .nav-wrapper {
             display: flex;
             justify-content: center;
             width: 100%;
         }
 
-        /* Rounded navbar */
         nav {
             background: #111;
             padding: 14px 26px;
@@ -32,14 +34,13 @@
             border: 1px solid rgba(255,255,255,0.06);
         }
 
-        /* Logo text only */
+        /* Logo — Inter Medium (not bold) */
         .logo {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 17px;
+            font-weight: 500;
             color: #4f8cff;
         }
 
-        /* Nav links */
         .nav-links {
             display: flex;
             align-items: center;
@@ -47,10 +48,12 @@
             margin-left: 10px;
         }
 
+        /* Nav links — Inter Medium */
         .nav-links a {
             color: #ccc;
             text-decoration: none;
             font-size: 15px;
+            font-weight: 500;
             transition: 0.2s;
         }
 
@@ -58,7 +61,7 @@
             color: white;
         }
 
-        /* Search icon (SVG) */
+        /* Search icon */
         .search-icon {
             width: 18px;
             height: 18px;
@@ -72,13 +75,14 @@
             opacity: 1;
         }
 
-        /* Sign up button */
+        /* Sign up button — Inter SemiBold */
         .signup-btn {
             padding: 8px 18px;
             background: #4f8cff;
             border-radius: 8px;
             color: white;
             text-decoration: none;
+            font-size: 15px;
             font-weight: 600;
             margin-left: 6px;
             transition: 0.2s;
@@ -94,23 +98,19 @@
     <div class="nav-wrapper">
         <nav>
 
-            <!-- Logo -->
             <div class="logo">pausuu.xyz</div>
 
-            <!-- Links -->
             <div class="nav-links">
                 <a href="https://pausuu.xyz/discover">Discover</a>
                 <a href="https://pausuu.xyz/recent">Recent</a>
                 <a href="https://pausuu.xyz/pricing">Pricing</a>
             </div>
 
-            <!-- Search icon (SVG) -->
             <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="7"></circle>
                 <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
             </svg>
 
-            <!-- Sign up button -->
             <a class="signup-btn" href="https://pausuu.xyz/login">Sign up</a>
 
         </nav>
