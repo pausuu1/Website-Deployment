@@ -14,14 +14,14 @@
             padding-top: 40px;
         }
 
-        /* Outer wrapper to center the navbar */
+        /* Center wrapper */
         .nav-wrapper {
             display: flex;
             justify-content: center;
             width: 100%;
         }
 
-        /* Exact rounded navbar */
+        /* Rounded navbar */
         nav {
             background: #111;
             padding: 14px 26px;
@@ -32,17 +32,14 @@
             border: 1px solid rgba(255,255,255,0.06);
         }
 
-        /* Logo section */
+        /* Logo text only */
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
             font-size: 18px;
             font-weight: 600;
             color: #4f8cff;
         }
 
-        /* Navigation links */
+        /* Nav links */
         .nav-links {
             display: flex;
             align-items: center;
@@ -61,17 +58,18 @@
             color: white;
         }
 
-        /* Search icon */
+        /* Search icon (SVG) */
         .search-icon {
-            font-size: 17px;
-            color: #ccc;
+            width: 18px;
+            height: 18px;
             cursor: pointer;
             margin-left: 6px;
+            opacity: 0.7;
             transition: 0.2s;
         }
 
         .search-icon:hover {
-            color: white;
+            opacity: 1;
         }
 
         /* Sign up button */
@@ -95,10 +93,9 @@
 
     <div class="nav-wrapper">
         <nav>
+
             <!-- Logo -->
-            <div class="logo">
-                <span>🔗</span> pausuu.xyz
-            </div>
+            <div class="logo">pausuu.xyz</div>
 
             <!-- Links -->
             <div class="nav-links">
@@ -107,11 +104,15 @@
                 <a href="https://pausuu.xyz/pricing">Pricing</a>
             </div>
 
-            <!-- Search icon -->
-            <div class="search-icon">🔍</div>
+            <!-- Search icon (SVG) -->
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="7"></circle>
+                <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+            </svg>
 
             <!-- Sign up button -->
             <a class="signup-btn" href="https://pausuu.xyz/login">Sign up</a>
+
         </nav>
     </div>
 
