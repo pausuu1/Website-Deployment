@@ -8,23 +8,16 @@
         body {
             margin: 0;
             background: #0d0d0d;
-            color: white;
             font-family: "Inter", Arial, sans-serif;
             display: flex;
             justify-content: center;
             padding-top: 40px;
         }
 
-        /* CENTERED ROUNDED NAVBAR */
-        .navbar-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav {
+        /* Centered rounded navbar container */
+        .nav-container {
             background: #111;
-            padding: 14px 32px;
+            padding: 14px 28px;
             border-radius: 14px;
             display: flex;
             align-items: center;
@@ -33,16 +26,22 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
 
+        /* Logo */
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 18px;
             font-weight: 600;
             color: #4f8cff;
         }
 
+        /* Nav links */
         .nav-links {
             display: flex;
             align-items: center;
             gap: 26px;
+            margin-left: 20px;
         }
 
         .nav-links a {
@@ -56,6 +55,19 @@
             color: white;
         }
 
+        /* Search icon */
+        .search-icon {
+            font-size: 18px;
+            color: #ccc;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .search-icon:hover {
+            color: white;
+        }
+
+        /* Sign up button */
         .signup-btn {
             padding: 8px 18px;
             background: #4f8cff;
@@ -73,18 +85,24 @@
 </head>
 <body>
 
-    <!-- CENTERED ROUNDED NAVBAR -->
-    <div class="navbar-wrapper">
-        <nav>
-            <div class="logo">pausuu.xyz</div>
+    <div class="nav-container">
+        <!-- Logo -->
+        <div class="logo">
+            <span>🔗</span> pausuu.xyz
+        </div>
 
-            <div class="nav-links">
-                <a href="https://pausuu.xyz/discover">Discover</a>
-                <a href="https://pausuu.xyz/recent">Recent</a>
-                <a href="https://pausuu.xyz/pricing">Pricing</a>
-                <a class="signup-btn" href="https://pausuu.xyz/login">Sign up</a>
-            </div>
-        </nav>
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="https://pausuu.xyz/discover">Discover</a>
+            <a href="https://pausuu.xyz/recent">Recent</a>
+            <a href="https://pausuu.xyz/pricing">Pricing</a>
+        </div>
+
+        <!-- Search icon -->
+        <div class="search-icon">🔍</div>
+
+        <!-- Sign up button -->
+        <a class="signup-btn" href="https://pausuu.xyz/login">Sign up</a>
     </div>
 
 </body>
