@@ -1,205 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pausuu.xyz</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pausuu.xyz</title>
+    <style>
+        body {
+            margin: 0;
+            background: #0d0d0d;
+            color: white;
+            font-family: "Inter", Arial, sans-serif;
+        }
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #111;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
 
-  <style>
-    * { box-sizing: border-box; }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #4f8cff;
+        }
 
-    body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: "Inter", sans-serif;
-      overflow-x: hidden;
-      text-align: center; /* FULL PAGE CENTERING */
-    }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
 
-    /* HEADER */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 25px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 100;
-    }
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.2s;
+        }
 
-    .logo {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      white-space: nowrap;
-    }
+        .nav-links a:hover {
+            color: white;
+        }
 
-    nav {
-      display: flex;
-      gap: 20px;
-      white-space: nowrap;
-    }
+        .signup-btn {
+            padding: 8px 18px;
+            background: #4f8cff;
+            border-radius: 6px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.95rem;
-      opacity: 0.85;
-      transition: 0.2s;
-    }
+        .signup-btn:hover {
+            background: #3a6fcc;
+        }
 
-    nav a:hover { opacity: 1; }
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+        }
 
-    /* MAIN CONTENT */
-    .content {
-      padding: 160px 20px 80px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
 
-    .intro-line {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-    }
+        .hero p {
+            font-size: 20px;
+            opacity: 0.7;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
 
-    .intro-line .prefix {
-      font-weight: 400;
-    }
+        .discord-login {
+            padding: 14px 28px;
+            background: #5865F2;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
 
-    .intro-line .name {
-      font-weight: 700;
-      transition: 0.25s ease;
-    }
-
-    /* Hover red effect */
-    #nameText:hover {
-      color: #ff4d4d;
-    }
-
-    .intro-sub {
-      font-size: 1.2rem;
-      opacity: 0.8;
-      margin-bottom: 60px;
-      line-height: 1.6;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 40px;
-    }
-
-    .icons {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-bottom: 80px;
-    }
-
-    .icons img, .icons svg {
-      width: 70px;
-      opacity: 0.9;
-      transition: 0.2s;
-    }
-
-    .icons img:hover, .icons svg:hover {
-      opacity: 1;
-      transform: scale(1.08);
-    }
-
-    /* PARTICLES */
-    .particle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: #ffffff40;
-      border-radius: 50%;
-      pointer-events: none;
-      filter: blur(1px);
-    }
-  </style>
+        .discord-login:hover {
+            background: #4752c4;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <div class="logo">pausuu.xyz</div>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/projects">Projects</a>
-  </nav>
-</header>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            <span>🔗</span> pausuu.xyz
+        </div>
 
-<div class="content">
+        <div class="nav-links">
+            <a href="https://pausuu.xyz/discover">Discover</a>
+            <a href="https://pausuu.xyz/recent">Recent</a>
+            <a href="https://pausuu.xyz/pricing">Pricing</a>
+            <a class="signup-btn" href="https://pausuu.xyz/login">Sign up</a>
+        </div>
+    </nav>
 
-  <!-- INTRO -->
-  <div class="intro-line" id="introLine">
-    <span class="prefix">I'm </span><span class="name" id="nameText">pausuu</span>, a self-taught editor, programmer, and developer
-  </div>
-  <div class="intro-sub" id="descText">
-    I like editing and coding for fun
-  </div>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Your Identity, Your Links</h1>
+        <p>Create your own profile, customize your page, and connect all your socials in one clean place.</p>
 
-  <!-- CONTACT -->
-  <h2>Contact Me</h2>
-  <div class="icons">
-
-    <!-- Inbox Icon (inline SVG, guaranteed working) -->
-    <svg width="70" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 7l3-4h12l3 4v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
-      <path d="M3 7h6l2 3h2l2-3h6"/>
-    </svg>
-
-    <!-- X (Twitter) -->
-    <img src="https://cdn.simpleicons.org/x/ffffff" alt="X">
-
-    <!-- Discord -->
-    <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord">
-
-  </div>
-
-</div>
-
-<script>
-  const nameEl = document.getElementById("nameText");
-  const descEl = document.getElementById("descText");
-
-  function createParticleAround(el) {
-    const rect = el.getBoundingClientRect();
-    const particle = document.createElement("div");
-    particle.classList.add("particle");
-
-    const size = Math.random() * 6 + 3;
-    particle.style.width = size + "px";
-    particle.style.height = size + "px";
-
-    const x = rect.left + rect.width / 2 + (Math.random() - 0.5) * rect.width;
-    const y = rect.top + window.scrollY + (Math.random() - 0.5) * rect.height;
-
-    particle.style.left = x + "px";
-    particle.style.top = y + "px";
-
-    document.body.appendChild(particle);
-
-    gsap.to(particle, {
-      opacity: 0,
-      y: -40,
-      x: (Math.random() - 0.5) * 80,
-      duration: 1.5,
-      ease: "power1.out",
-      onComplete: () => particle.remove(),
-    });
-  }
-
-  setInterval(() => {
-    createParticleAround(nameEl);
-    createParticleAround(descEl);
-  }, 220);
-</script>
+        <a class="discord-login" href="https://pausuu.xyz/login">
+            Sign in with Discord
+        </a>
+    </section>
 
 </body>
 </html>
