@@ -11,11 +11,12 @@
     <style>
         body {
             margin: 0;
-            background: #0d0d0d;
+            background: #0c0c0c;
             font-family: "Inter", sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
+            color: white;
         }
 
         /* NAVBAR WRAPPER */
@@ -29,12 +30,13 @@
         /* NAVBAR */
         nav {
             background: #111;
-            padding: 14px 26px;
-            border-radius: 14px;
+            padding: 14px 28px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: 34px;
             border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
         }
 
         /* LOGO */
@@ -48,12 +50,12 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 22px;
+            gap: 24px;
             margin-left: 10px;
         }
 
         .nav-links a {
-            color: #ccc;
+            color: #cfcfcf;
             text-decoration: none;
             font-size: 15px;
             font-weight: 500;
@@ -70,7 +72,7 @@
             height: 18px;
             cursor: pointer;
             margin-left: 6px;
-            opacity: 0.7;
+            opacity: 0.75;
             transition: 0.2s;
         }
 
@@ -80,14 +82,13 @@
 
         /* SIGN UP BUTTON */
         .signup-btn {
-            padding: 8px 18px;
+            padding: 8px 20px;
             background: #4f8cff;
             border-radius: 8px;
             color: white;
             text-decoration: none;
             font-size: 15px;
             font-weight: 600;
-            margin-left: 6px;
             transition: 0.2s;
         }
 
@@ -98,35 +99,35 @@
         /* HERO SECTION */
         .hero {
             text-align: center;
-            margin-top: 80px;
+            margin-top: 90px;
             max-width: 700px;
             padding: 0 20px;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 50px;
             font-weight: 600;
             color: white;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .hero p {
             font-size: 18px;
             color: #b3b3b3;
             line-height: 1.6;
-            margin-bottom: 32px;
+            margin-bottom: 36px;
         }
 
         .hero-buttons {
             display: flex;
             justify-content: center;
-            gap: 14px;
+            gap: 16px;
         }
 
         .hero-btn-primary {
-            padding: 12px 26px;
+            padding: 12px 28px;
             background: #4f8cff;
-            border-radius: 8px;
+            border-radius: 10px;
             color: white;
             font-weight: 600;
             text-decoration: none;
@@ -134,9 +135,9 @@
         }
 
         .hero-btn-secondary {
-            padding: 12px 26px;
+            padding: 12px 28px;
             background: #1a1a1a;
-            border-radius: 8px;
+            border-radius: 10px;
             color: white;
             font-weight: 500;
             text-decoration: none;
@@ -146,50 +147,50 @@
 
         /* PRICING SECTION */
         .pricing {
-            margin-top: 100px;
+            margin-top: 120px;
             text-align: center;
-            color: white;
             padding: 0 20px;
         }
 
         .pricing h2 {
-            font-size: 36px;
+            font-size: 38px;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .pricing-sub {
             font-size: 17px;
             color: #b3b3b3;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .pricing-grid {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 34px;
             flex-wrap: wrap;
         }
 
         .price-card {
             background: #111;
             border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 14px;
-            padding: 30px;
-            width: 300px;
+            border-radius: 16px;
+            padding: 32px;
+            width: 310px;
             text-align: left;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
         }
 
         .price-card h3 {
             font-size: 20px;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .price {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .price span {
@@ -200,11 +201,11 @@
         .price-card ul {
             list-style: none;
             padding: 0;
-            margin: 0 0 25px 0;
+            margin: 0 0 28px 0;
         }
 
         .price-card ul li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: #ccc;
             font-size: 15px;
         }
@@ -213,9 +214,9 @@
             display: inline-block;
             width: 100%;
             text-align: center;
-            padding: 10px 0;
+            padding: 12px 0;
             background: #4f8cff;
-            border-radius: 8px;
+            border-radius: 10px;
             color: white;
             font-weight: 600;
             text-decoration: none;
@@ -231,10 +232,73 @@
         }
 
         .verify-text {
-            margin-top: 10px;
+            margin-top: 12px;
             font-size: 13px;
             color: #b3b3b3;
             text-align: center;
+        }
+
+        /* CLAIM SECTION */
+        .claim-section {
+            margin-top: 120px;
+            background: #111;
+            border-radius: 18px;
+            padding: 50px 40px;
+            width: 85%;
+            max-width: 900px;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .claim-text h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .claim-text p {
+            font-size: 17px;
+            color: #b3b3b3;
+            max-width: 420px;
+        }
+
+        .claim-input-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #1a1a1a;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .claim-prefix {
+            color: #b3b3b3;
+            font-size: 15px;
+        }
+
+        .claim-input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            width: 140px;
+        }
+
+        .claim-btn {
+            padding: 12px 22px;
+            background: #4f8cff;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 15px;
+            white-space: nowrap;
         }
     </style>
 </head>
@@ -312,6 +376,20 @@
                 <p class="verify-text">Already boosting? Verify in settings.</p>
             </div>
 
+        </div>
+    </section>
+
+    <!-- CLAIM SECTION -->
+    <section class="claim-section">
+        <div class="claim-text">
+            <h2>Ready to claim your page?</h2>
+            <p>Join thousands of creators sharing everything they do from a single link.</p>
+        </div>
+
+        <div class="claim-input-area">
+            <span class="claim-prefix">pausuu.xyz/</span>
+            <input class="claim-input" type="text" placeholder="username">
+            <a class="claim-btn" href="#">Claim now</a>
         </div>
     </section>
 
