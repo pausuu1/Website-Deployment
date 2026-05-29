@@ -19,7 +19,7 @@
             align-items: center;
         }
 
-        /* NAVBAR WRAPPER (copied exactly from index.html) */
+        /* NAVBAR WRAPPER */
         .nav-wrapper {
             display: flex;
             justify-content: center;
@@ -145,7 +145,6 @@
         .discord-logo {
             width: 24px;
             height: 24px;
-            filter: brightness(0) invert(1);
         }
 
         .terms {
@@ -166,7 +165,7 @@
 </head>
 <body>
 
-    <!-- YOUR EXACT NAVBAR -->
+    <!-- NAVBAR -->
     <div class="nav-wrapper">
         <nav>
             <div class="logo">pausuu.xyz</div>
@@ -192,9 +191,9 @@
             <h1>Welcome back</h1>
             <p>Connect your Discord to sign in or create an account.</p>
 
-            <!-- Your OAuth URL (implicit flow) -->
+            <!-- FIXED WORKING DISCORD LOGO -->
             <a class="discord-btn" href="https://discord.com/oauth2/authorize?client_id=1509823720393408652&response_type=token&redirect_uri=https%3A%2F%2Fpausuu.xyz%2Flogin&scope=identify%20guilds.members.read">
-                <img src="https://cdn.discordapp.com/assets/847541504914fd33810e70a0ea73177e.svg" class="discord-logo">
+                <img src="https://cdn.discordapp.com/attachments/1052780891300184096/1203100898846300180/discord-logo-white.png" class="discord-logo">
                 Continue with Discord
             </a>
 
