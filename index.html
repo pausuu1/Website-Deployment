@@ -236,6 +236,52 @@
             color: #b3b3b3;
             text-align: center;
         }
+
+        /* STATS SECTION */
+        .stats {
+            margin-top: 120px;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .stats h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: #111;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 25px;
+            width: 240px;
+            text-align: center;
+        }
+
+        .stat-icon {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .stat-card h3 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .stat-card p {
+            font-size: 15px;
+            color: #b3b3b3;
+        }
     </style>
 </head>
 <body>
@@ -314,6 +360,58 @@
 
         </div>
     </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats">
+        <h2>Over <span id="stat-total-profiles">835</span> profiles and counting.</h2>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">👁️</div>
+                <h3 id="stat-views">24.7K+</h3>
+                <p>Profile views</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">👤</div>
+                <h3 id="stat-active">835</h3>
+                <p>Active profiles</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🧑‍💻</div>
+                <h3 id="stat-users">870</h3>
+                <p>Users signed up</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">💎</div>
+                <h3 id="stat-badges">180</h3>
+                <p>Badges earned</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BACKEND-READY JS -->
+    <script>
+        /*
+            When your backend is ready, you can update stats like this:
+
+            fetch('/api/stats')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('stat-total-profiles').textContent = data.totalProfiles;
+                    document.getElementById('stat-views').textContent = data.profileViews;
+                    document.getElementById('stat-active').textContent = data.activeProfiles;
+                    document.getElementById('stat-users').textContent = data.usersSignedUp;
+                    document.getElementById('stat-badges').textContent = data.badgesEarned;
+                });
+
+            For now, the numbers are static placeholders.
+        */
+    </script>
 
 </body>
 </html>
