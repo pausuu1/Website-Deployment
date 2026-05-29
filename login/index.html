@@ -19,7 +19,7 @@
             align-items: center;
         }
 
-        /* NAVBAR WRAPPER (copied exactly from index.html) */
+        /* NAVBAR WRAPPER */
         .nav-wrapper {
             display: flex;
             justify-content: center;
@@ -123,8 +123,10 @@
             margin-bottom: 32px;
         }
 
+        /* FIXED INPUT WIDTH */
         .input-field {
             width: 100%;
+            box-sizing: border-box; /* ensures padding doesn't increase width */
             padding: 12px 14px;
             margin-bottom: 18px;
             border-radius: 10px;
