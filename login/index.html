@@ -13,11 +13,54 @@
             margin: 0;
             background: #0c0c0c;
             font-family: "Inter", sans-serif;
+            color: white;
+        }
+
+        /* HEADER */
+        .header {
+            width: 100%;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0c0c0c;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .header .logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+        }
+
+        .header .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header .nav a {
+            color: #b3b3b3;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .header .nav a:hover {
+            color: white;
+        }
+
+        /* LOGIN BOX */
+        .login-container {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            color: white;
+            padding-top: 60px;
         }
 
         .login-box {
@@ -85,20 +128,35 @@
 </head>
 <body>
 
-    <div class="login-box">
-        <h1>Welcome back</h1>
-        <p>Connect your Discord to sign in or create an account.</p>
+    <!-- HEADER -->
+    <div class="header">
+        <a href="/" class="logo">pausuu.xyz</a>
 
-        <!-- Your OAuth URL (converted to implicit flow) -->
-        <a class="discord-btn" href="https://discord.com/oauth2/authorize?client_id=1509823720393408652&response_type=token&redirect_uri=https%3A%2F%2Fpausuu.xyz%2Flogin&scope=identify%20guilds.members.read">
-            <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f47e.svg">
-            Continue with Discord
-        </a>
+        <div class="nav">
+            <a href="/discover">Discover</a>
+            <a href="/recent">Recent</a>
+            <a href="/pricing">Pricing</a>
+            <a href="/login" style="color:white;font-weight:600;">Login</a>
+        </div>
+    </div>
 
-        <div class="terms">
-            By continuing, you agree to our 
-            <a href="#">Terms</a> and 
-            <a href="#">Privacy Policy</a>.
+    <!-- LOGIN BOX -->
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Welcome back</h1>
+            <p>Connect your Discord to sign in or create an account.</p>
+
+            <!-- Your OAuth URL (implicit flow) -->
+            <a class="discord-btn" href="https://discord.com/oauth2/authorize?client_id=1509823720393408652&response_type=token&redirect_uri=https%3A%2F%2Fpausuu.xyz%2Flogin&scope=identify%20guilds.members.read">
+                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f47e.svg">
+                Continue with Discord
+            </a>
+
+            <div class="terms">
+                By continuing, you agree to our 
+                <a href="#">Terms</a> and 
+                <a href="#">Privacy Policy</a>.
+            </div>
         </div>
     </div>
 
