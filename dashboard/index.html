@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Dashboard</title>
+    <title>Dashboard – pausuu.xyz</title>
 
+    <!-- Inter font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
@@ -13,17 +14,93 @@
             background: #0c0c0c;
             font-family: "Inter", sans-serif;
             color: white;
-            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
+        /* NAVBAR WRAPPER (copied exactly) */
+        .nav-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        nav {
+            background: #111;
+            padding: 14px 28px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 34px;
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+        }
+
+        .logo {
+            font-size: 17px;
+            font-weight: 600;
+            color: #e5e5e5;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-left: 10px;
+        }
+
+        .nav-links a {
+            color: #cfcfcf;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .search-icon {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            margin-left: 6px;
+            opacity: 0.75;
+            transition: 0.2s;
+        }
+
+        .search-icon:hover {
+            opacity: 1;
+        }
+
+        .signup-btn {
+            padding: 8px 20px;
+            background: #4f8cff;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .signup-btn:hover {
+            background: #3a6fcc;
+        }
+
+        /* DASHBOARD CONTENT */
         .container {
             max-width: 700px;
-            margin: auto;
+            margin-top: 120px;
             background: #111;
             padding: 40px;
             border-radius: 18px;
             border: 1px solid rgba(255,255,255,0.08);
             box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+            width: 85%;
         }
 
         h1 {
@@ -83,6 +160,27 @@
 </head>
 <body>
 
+    <!-- YOUR EXACT NAVBAR -->
+    <div class="nav-wrapper">
+        <nav>
+            <div class="logo">pausuu.xyz</div>
+
+            <div class="nav-links">
+                <a href="https://pausuu.xyz/discover">Discover</a>
+                <a href="https://pausuu.xyz/recent">Recent</a>
+                <a href="https://pausuu.xyz/pricing">Pricing</a>
+            </div>
+
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="7"></circle>
+                <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+            </svg>
+
+            <a class="signup-btn" href="https://pausuu.xyz/login">Sign up</a>
+        </nav>
+    </div>
+
+    <!-- DASHBOARD CONTENT -->
     <div class="container">
         <h1>Your Dashboard</h1>
 
@@ -100,7 +198,7 @@ const token = localStorage.getItem("token");
 
 // If not logged in, redirect to login
 if (!user || !token) {
-    window.location.href = "/login/index.html";
+    window.location.href = "/login";
 }
 
 // Display user info
@@ -143,7 +241,7 @@ checkBoost();
 function logout() {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
-    window.location.href = "/login/index.html";
+    window.location.href = "/login";
 }
 </script>
 
