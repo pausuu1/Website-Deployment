@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body style="color:white;background:#0c0c0c;font-family:Inter;">
+    <h1>Dashboard</h1>
+    <div id="user"></div>
+
+<script>
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (!user) {
+    window.location.href = "/login/index.html";
+}
+
+document.getElementById("user").innerHTML = `
+    <p>Logged in as: ${user.username}</p>
+    <img src="https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png" width="100">
+`;
+</script>
+
+</body>
+</html>
