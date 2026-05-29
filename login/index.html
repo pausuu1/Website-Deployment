@@ -89,7 +89,8 @@
         <h1>Welcome back</h1>
         <p>Connect your Discord to sign in or create an account.</p>
 
-        <a class="discord-btn" href="https://discord.com/oauth2/authorize?client_id=1509823720393408652&response_type=code&redirect_uri=https%3A%2F%2Fpausuu.xyz%2Flogin%2Findex.html&scope=identify+guilds.members.read">
+        <!-- Your exact OAuth URL -->
+        <a class="discord-btn" href="https://discord.com/oauth2/authorize?client_id=1509823720393408652&response_type=token&redirect_uri=https%3A%2F%2Fpausuu.xyz%2Flogin%2Findex.html&scope=identify%20guilds.members.read">
             <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f47e.svg">
             Continue with Discord
         </a>
@@ -100,6 +101,33 @@
             <a href="#">Privacy Policy</a>.
         </div>
     </div>
+
+<script>
+// Handle Discord OAuth implicit login
+async function handleDiscordLogin() {
+    const hash = window.location.hash;
+    if (!hash.includes("access_token")) return;
+
+    const params = new URLSearchParams(hash.substring(1));
+    const accessToken = params.get("access_token");
+
+    // Fetch user info
+    const userRes = await fetch("https://discord.com/api/users/@me", {
+        headers: { Authorization: `Bearer ${accessToken}` }
+    });
+
+    const user = await userRes.json();
+
+    // Save user info locally
+    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("token", accessToken);
+
+    // Redirect to dashboard
+    window.location.href = "/dashboard/index.html";
+}
+
+handleDiscordLogin();
+</script>
 
 </body>
 </html>
