@@ -19,7 +19,7 @@
             align-items: center;
         }
 
-        /* NAVBAR WRAPPER (copied exactly) */
+        /* NAVBAR WRAPPER (copied exactly from index.html) */
         .nav-wrapper {
             display: flex;
             justify-content: center;
@@ -142,9 +142,10 @@
             background: #4752c4;
         }
 
-        .discord-btn img {
+        .discord-logo {
             width: 24px;
             height: 24px;
+            filter: brightness(0) invert(1);
         }
 
         .terms {
@@ -193,7 +194,7 @@
 
             <!-- Your OAuth URL (implicit flow) -->
             <a class="discord-btn" href="https://discord.com/oauth2/authorize?client_id=1509823720393408652&response_type=token&redirect_uri=https%3A%2F%2Fpausuu.xyz%2Flogin&scope=identify%20guilds.members.read">
-                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f47e.svg">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo_white.svg" class="discord-logo">
                 Continue with Discord
             </a>
 
