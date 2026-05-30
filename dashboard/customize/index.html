@@ -10,7 +10,7 @@
     <style>
         body {
             margin: 0;
-            background: radial-gradient(circle at top, #1b1b2a 0, #050509 55%, #000 100%);
+            background: #0c0c0c;
             font-family: "Inter", sans-serif;
             color: white;
             display: flex;
@@ -18,7 +18,7 @@
             overflow: hidden;
         }
 
-        /* SIDEBAR (same style as dashboard) */
+        /* SIDEBAR */
         .sidebar {
             width: 240px;
             background: #111;
@@ -69,29 +69,17 @@
             position: relative;
         }
 
-        /* subtle wave-ish overlay */
-        .main::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 20% 0, rgba(79,140,255,0.12), transparent 55%),
-                        radial-gradient(circle at 80% 100%, rgba(255,115,250,0.12), transparent 55%);
-            opacity: 0.9;
-            pointer-events: none;
-        }
-
         .content {
-            position: relative;
-            z-index: 1;
-            max-width: 960px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
+        /* TOP BAR */
         .top-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 24px;
+            margin-bottom: 26px;
         }
 
         .top-left {
@@ -121,14 +109,13 @@
             text-decoration: none;
             font-size: 13px;
             border: 1px solid rgba(255,255,255,0.12);
-            background: rgba(10,10,10,0.9);
+            background: #1a1a1a;
             color: #e5e5e5;
-            backdrop-filter: blur(10px);
             cursor: pointer;
         }
 
         .btn:hover {
-            background: rgba(20,20,20,0.95);
+            background: #222;
         }
 
         .btn-primary {
@@ -141,20 +128,20 @@
             background: #3a6fcc;
         }
 
-        /* PROFILE PREVIEW WRAPPER */
-        .preview-wrapper {
+        /* PROFILE CARD */
+        .profile-wrapper {
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             margin-top: 10px;
         }
 
         .profile-card {
-            width: 360px;
-            background: rgba(10,10,15,0.96);
-            border-radius: 24px;
+            width: 380px;
+            background: #111;
+            border-radius: 22px;
             padding: 26px 22px 22px 22px;
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 18px 45px rgba(0,0,0,0.7);
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.6);
         }
 
         .profile-header {
@@ -165,22 +152,16 @@
         }
 
         .avatar {
-            width: 56px;
-            height: 56px;
+            width: 60px;
+            height: 60px;
             border-radius: 999px;
             background: #222;
             background-size: cover;
             background-position: center;
         }
 
-        .name-block {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
         .username {
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 600;
         }
 
@@ -190,7 +171,7 @@
         }
 
         .section {
-            margin-top: 16px;
+            margin-top: 18px;
         }
 
         .section-label-row {
@@ -212,7 +193,7 @@
         }
 
         .section-box {
-            background: #15151c;
+            background: #151515;
             border-radius: 12px;
             padding: 10px 12px;
             border: 1px solid rgba(255,255,255,0.06);
@@ -286,17 +267,16 @@
                 <button class="btn">Preview</button>
                 <button class="btn">Discard</button>
                 <button class="btn btn-primary">Save changes</button>
-                <button class="btn">Glass style</button>
                 <button class="btn">Change background</button>
             </div>
         </div>
 
-        <div class="preview-wrapper">
+        <div class="profile-wrapper">
             <div class="profile-card">
                 <div class="profile-header">
                     <div class="avatar" id="avatar"></div>
-                    <div class="name-block">
-                        <div class="username" id="username">pausuu</div>
+                    <div>
+                        <div class="username" id="username">username</div>
                         <div class="bio">Add a short bio</div>
                     </div>
                 </div>
@@ -353,7 +333,6 @@ if (user && user.avatar) {
         `url(https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=128)`;
 }
 
-/* LOGOUT */
 function logout() {
     localStorage.clear();
     window.location.href = "/";
