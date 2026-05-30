@@ -10,7 +10,7 @@
     <style>
         body {
             margin: 0;
-            background: #0c0c0c;
+            background: radial-gradient(circle at top, #1b1b2a 0, #050509 55%, #000 100%);
             font-family: "Inter", sans-serif;
             color: white;
             display: flex;
@@ -18,7 +18,7 @@
             overflow: hidden;
         }
 
-        /* SIDEBAR */
+        /* SIDEBAR (same style as dashboard) */
         .sidebar {
             width: 240px;
             background: #111;
@@ -64,115 +64,196 @@
         /* MAIN AREA */
         .main {
             flex: 1;
-            padding: 40px 60px;
+            padding: 32px 48px;
             overflow-y: auto;
+            position: relative;
         }
 
-        .top-bar {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 30px;
+        /* subtle wave-ish overlay */
+        .main::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 0, rgba(79,140,255,0.12), transparent 55%),
+                        radial-gradient(circle at 80% 100%, rgba(255,115,250,0.12), transparent 55%);
+            opacity: 0.9;
+            pointer-events: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .top-left {
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #cfcfcf;
         }
 
-        .top-bar span {
-            opacity: 0.7;
+        .back-arrow {
+            font-size: 18px;
+            cursor: pointer;
+            opacity: 0.8;
         }
 
-        /* BUTTONS */
-        .action-buttons {
+        .top-right {
             display: flex;
-            gap: 12px;
-            margin-bottom: 30px;
+            gap: 10px;
         }
 
         .btn {
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-weight: 500;
             text-decoration: none;
-            font-size: 14px;
-            border: 1px solid rgba(255,255,255,0.08);
-            background: #1a1a1a;
-            color: white;
+            font-size: 13px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(10,10,10,0.9);
+            color: #e5e5e5;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
         }
 
         .btn:hover {
-            background: #222;
+            background: rgba(20,20,20,0.95);
         }
 
-        .btn-save {
+        .btn-primary {
             background: #4f8cff;
-            border: none;
+            border-color: #4f8cff;
+            color: white;
         }
 
-        .btn-save:hover {
+        .btn-primary:hover {
             background: #3a6fcc;
         }
 
-        /* PROFILE PREVIEW CARD */
+        /* PROFILE PREVIEW WRAPPER */
+        .preview-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
         .profile-card {
-            background: #111;
-            border-radius: 20px;
-            padding: 40px;
-            border: 1px solid rgba(255,255,255,0.06);
-            max-width: 500px;
+            width: 360px;
+            background: rgba(10,10,15,0.96);
+            border-radius: 24px;
+            padding: 26px 22px 22px 22px;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.7);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
         }
 
         .avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            border-radius: 999px;
             background: #222;
-            margin-bottom: 20px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .name-block {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
         }
 
         .username {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 6px;
+            font-size: 18px;
+            font-weight: 600;
         }
 
         .bio {
-            font-size: 15px;
-            color: #cfcfcf;
-            margin-bottom: 20px;
+            font-size: 13px;
+            color: #a9a9a9;
+        }
+
+        .section {
+            margin-top: 16px;
+        }
+
+        .section-label-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
         }
 
         .section-title {
-            font-size: 16px;
+            font-size: 13px;
             font-weight: 600;
-            margin-top: 20px;
-            margin-bottom: 8px;
+            color: #dcdcdc;
+        }
+
+        .section-count {
+            font-size: 12px;
+            color: #8f8f8f;
         }
 
         .section-box {
-            background: #1a1a1a;
-            padding: 14px;
-            border-radius: 10px;
+            background: #15151c;
+            border-radius: 12px;
+            padding: 10px 12px;
             border: 1px solid rgba(255,255,255,0.06);
-            color: #cfcfcf;
-            font-size: 14px;
+            font-size: 13px;
+            color: #b8b8b8;
         }
 
-        .add-btn {
-            margin-top: 10px;
-            padding: 10px 16px;
+        .section-helper {
+            margin-top: 6px;
+            font-size: 12px;
+            color: #8f8f8f;
+        }
+
+        .inline-btn {
+            margin-top: 8px;
+            padding: 7px 14px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            background: #2b2b35;
+            color: #e5e5e5;
+        }
+
+        .inline-btn-primary {
             background: #4f8cff;
-            border-radius: 8px;
             color: white;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
+        }
+
+        .inline-btn-boost {
+            background: #FF73FA;
+            color: white;
         }
 
         .footer-info {
-            margin-top: 30px;
-            font-size: 13px;
-            color: #cfcfcf;
-            opacity: 0.8;
+            margin-top: 18px;
+            font-size: 11px;
+            color: #8f8f8f;
+            display: flex;
+            justify-content: space-between;
         }
     </style>
 </head>
@@ -193,45 +274,70 @@
 
 <!-- MAIN CONTENT -->
 <div class="main">
+    <div class="content">
 
-    <div class="top-bar">
-        <span>←</span> Editing your page
-    </div>
+        <div class="top-row">
+            <div class="top-left">
+                <span class="back-arrow" onclick="window.location.href='/dashboard'">←</span>
+                <span>Editing your page</span>
+            </div>
 
-    <div class="action-buttons">
-        <a class="btn">Preview</a>
-        <a class="btn">Discard</a>
-        <a class="btn btn-save">Save changes</a>
-        <a class="btn">Glass style</a>
-        <a class="btn">Change background</a>
-    </div>
-
-    <div class="profile-card">
-        <div class="avatar" id="avatar"></div>
-
-        <div class="username" id="username">username</div>
-        <div class="bio">Add a short bio</div>
-
-        <div class="section-title">Song</div>
-        <div class="section-box">No song yet</div>
-        <a class="add-btn">Pick song</a>
-
-        <div class="section-title">Links (0 / 8)</div>
-        <div class="section-box">No links yet</div>
-        <a class="add-btn">+ Add link</a>
-
-        <div class="section-title">Posts (0 / 20)</div>
-        <a class="add-btn" style="background:#FF73FA;">Boost to unlock posts</a>
-
-        <div class="footer-info">
-            0 views • Joined May 2026
+            <div class="top-right">
+                <button class="btn">Preview</button>
+                <button class="btn">Discard</button>
+                <button class="btn btn-primary">Save changes</button>
+                <button class="btn">Glass style</button>
+                <button class="btn">Change background</button>
+            </div>
         </div>
-    </div>
 
+        <div class="preview-wrapper">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar" id="avatar"></div>
+                    <div class="name-block">
+                        <div class="username" id="username">pausuu</div>
+                        <div class="bio">Add a short bio</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-label-row">
+                        <div class="section-title">Song</div>
+                    </div>
+                    <div class="section-box">No song yet</div>
+                    <button class="inline-btn inline-btn-primary">Pick song</button>
+                </div>
+
+                <div class="section">
+                    <div class="section-label-row">
+                        <div class="section-title">Links</div>
+                        <div class="section-count">0 / 8</div>
+                    </div>
+                    <div class="section-box">No links yet</div>
+                    <div class="section-helper">Add your first link below to show it on your profile.</div>
+                    <button class="inline-btn inline-btn-primary">+ Add link</button>
+                </div>
+
+                <div class="section">
+                    <div class="section-label-row">
+                        <div class="section-title">Posts</div>
+                        <div class="section-count">0 / 20</div>
+                    </div>
+                    <button class="inline-btn inline-btn-boost">Boost to unlock posts</button>
+                </div>
+
+                <div class="footer-info">
+                    <span>0 views</span>
+                    <span>Joined May 2026</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 <script>
-/* LOAD USER DATA */
 const user = JSON.parse(localStorage.getItem("user"));
 const username = localStorage.getItem("username");
 
@@ -239,12 +345,13 @@ if (!user) {
     window.location.href = "/login";
 }
 
-/* SET USERNAME */
 document.getElementById("username").textContent = username || user.username;
 
-/* SET AVATAR */
-document.getElementById("avatar").style.backgroundImage =
-    `url(https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=128)`;
+const avatarEl = document.getElementById("avatar");
+if (user && user.avatar) {
+    avatarEl.style.backgroundImage =
+        `url(https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=128)`;
+}
 
 /* LOGOUT */
 function logout() {
