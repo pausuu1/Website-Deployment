@@ -185,7 +185,7 @@
             color: white;
             font-weight: 600;
             text-decoration: none;
-            background: #4f8cff; /* Get started stays blue */
+            background: #4f8cff;
         }
 
         .pricing-btn:hover {
@@ -333,16 +333,56 @@
 <div class="claim-section" id="claim-section"></div>
 
 <script>
-const user = localStorage.getItem("user");
+/* ------------------------------
+   LOGIN FLOW + ACCOUNT SYSTEM
+   ------------------------------ */
 
-// Update navbar button
+async function handleDiscordLogin() {
+    const hash = window.location.hash;
+    if (!hash.includes("access_token")) return;
+
+    const params = new URLSearchParams(hash.substring(1));
+    const accessToken = params.get("access_token");
+
+    // Fetch Discord user
+    const userRes = await fetch("https://discord.com/api/users/@me", {
+        headers: { Authorization: `Bearer ${accessToken}` }
+    });
+
+    const user = await userRes.json();
+
+    // Save user + token
+    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("token", accessToken);
+
+    // TEMPORARY ACCOUNT SYSTEM (until backend exists)
+    const hasProfile = localStorage.getItem("hasProfile");
+
+    if (hasProfile === "true") {
+        window.location.href = "/dashboard";
+    } else {
+        window.location.href = "/onboarding";
+    }
+}
+
+handleDiscordLogin();
+
+/* ------------------------------
+   NAVBAR SWITCHING
+   ------------------------------ */
+
+const user = localStorage.getItem("user");
 const navBtn = document.getElementById("nav-auth-btn");
+
 if (user) {
     navBtn.textContent = "Dashboard";
     navBtn.href = "/dashboard";
 }
 
-// HERO SECTION SWITCHING
+/* ------------------------------
+   HERO SECTION SWITCHING
+   ------------------------------ */
+
 const hero = document.getElementById("hero-section");
 
 if (user) {
@@ -367,7 +407,10 @@ if (user) {
     `;
 }
 
-// CLAIM SECTION SWITCHING
+/* ------------------------------
+   CLAIM SECTION SWITCHING
+   ------------------------------ */
+
 const claim = document.getElementById("claim-section");
 
 if (user) {
