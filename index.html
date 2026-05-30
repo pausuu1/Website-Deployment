@@ -12,23 +12,34 @@
             color: white;
         }
 
-        .nav {
+        /* NAV WRAPPER (centers the whole bar) */
+        .nav-wrapper {
             width: 100%;
-            padding: 14px 26px;
-            background: #111;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            margin-top: 20px;
         }
 
+        /* NAVBAR (the floating rounded bar) */
+        .nav {
+            background: #111;
+            padding: 14px 26px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        /* LEFT */
         .nav-left {
             font-size: 18px;
             font-weight: 600;
-            color: #ffffff;
+            color: white;
             cursor: pointer;
         }
 
+        /* CENTER LINKS */
         .nav-center {
             display: flex;
             gap: 26px;
@@ -45,11 +56,12 @@
             color: white;
         }
 
+        /* RIGHT SIDE */
         .nav-right {
-            display: flex;
-            align-items: center;
+            margin-left: auto;
         }
 
+        /* Blue button */
         .nav-btn {
             padding: 8px 18px;
             background: #4f8cff;
@@ -66,28 +78,33 @@
         }
     </style>
 </head>
+
 <body>
 
-    <div class="nav">
-        <!-- left -->
-        <div class="nav-left" onclick="location.href='/'">
-            pausuu.xyz
-        </div>
+    <div class="nav-wrapper">
+        <div class="nav">
 
-        <!-- middle -->
-        <div class="nav-center">
-            <a href="/discover/">Discover</a>
-            <a href="/pricing/">Pricing</a>
-        </div>
+            <!-- LEFT -->
+            <div class="nav-left" onclick="location.href='/'">
+                pausuu.xyz
+            </div>
 
-        <!-- right -->
-        <div class="nav-right">
-            <a id="authBtn" class="nav-btn"></a>
+            <!-- CENTER -->
+            <div class="nav-center">
+                <a href="/discover/">Discover</a>
+                <a href="/pricing/">Pricing</a>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="nav-right">
+                <a id="authBtn" class="nav-btn"></a>
+            </div>
+
         </div>
     </div>
 
 <script>
-    // super simple "logged in" check
+    // Simple login check
     const user = localStorage.getItem("user");
     const authBtn = document.getElementById("authBtn");
 
@@ -96,7 +113,7 @@
         authBtn.href = "/dashboard/";
     } else {
         authBtn.textContent = "Sign up";
-        authBtn.href = "/signup/"; // or your auth page
+        authBtn.href = "/signup/";
     }
 </script>
 
