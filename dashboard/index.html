@@ -18,7 +18,6 @@
             align-items: center;
         }
 
-        /* NAVBAR */
         .nav-wrapper {
             display: flex;
             justify-content: center;
@@ -62,19 +61,6 @@
             color: white;
         }
 
-        .search-icon {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-            margin-left: 6px;
-            opacity: 0.75;
-            transition: 0.2s;
-        }
-
-        .search-icon:hover {
-            opacity: 1;
-        }
-
         .signup-btn {
             padding: 8px 20px;
             background: #4f8cff;
@@ -90,7 +76,6 @@
             background: #3a6fcc;
         }
 
-        /* DASHBOARD BOX */
         .dash-container {
             display: flex;
             justify-content: center;
@@ -134,9 +119,7 @@
             background: #1a1a1a;
             border-radius: 10px;
             color: white;
-            text-decoration: none;
             border: 1px solid rgba(255,255,255,0.08);
-            font-weight: 500;
             cursor: pointer;
             transition: 0.2s;
         }
@@ -148,40 +131,34 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <div class="nav-wrapper">
-        <nav>
-            <div class="logo">pausuu.xyz</div>
+<div class="nav-wrapper">
+    <nav>
+        <div class="logo">pausuu.xyz</div>
 
-            <div class="nav-links">
-                <a href="https://pausuu.xyz/discover">Discover</a>
-                <a href="https://pausuu.xyz/recent">Recent</a>
-                <a href="https://pausuu.xyz/pricing">Pricing</a>
-            </div>
-
-            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="7"></circle>
-                <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
-            </svg>
-
-            <a class="signup-btn" href="https://pausuu.xyz/login">Sign up</a>
-        </nav>
-    </div>
-
-    <!-- DASHBOARD -->
-    <div class="dash-container">
-        <div class="dash-box" id="dash">
-            <h1>Loading...</h1>
+        <div class="nav-links">
+            <a href="/discover">Discover</a>
+            <a href="/recent">Recent</a>
+            <a href="/pricing">Pricing</a>
         </div>
+
+        <a class="signup-btn" id="nav-auth-btn" href="/login">Sign up</a>
+    </nav>
+</div>
+
+<div class="dash-container">
+    <div class="dash-box" id="dash">
+        <h1>Loading...</h1>
     </div>
+</div>
 
 <script>
-// Load user from localStorage
+// Dynamic navbar
 const user = JSON.parse(localStorage.getItem("user"));
-const token = localStorage.getItem("token");
-
-// Redirect if not logged in
-if (!user || !token) {
+if (user) {
+    const btn = document.getElementById("nav-auth-btn");
+    btn.textContent = "Dashboard";
+    btn.href = "/dashboard";
+} else {
     window.location.href = "/login";
 }
 
@@ -194,7 +171,6 @@ document.getElementById("dash").innerHTML = `
     <button class="logout-btn" onclick="logout()">Log out</button>
 `;
 
-// Logout function
 function logout() {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
