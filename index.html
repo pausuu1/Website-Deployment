@@ -38,6 +38,7 @@
             font-size: 17px;
             font-weight: 600;
             color: #e5e5e5;
+            text-decoration: none;
         }
 
         .nav-links {
@@ -78,10 +79,11 @@
         .hero {
             text-align: center;
             margin-top: 120px;
+            margin-bottom: 140px;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 700;
             margin-bottom: 16px;
         }
@@ -92,7 +94,13 @@
             margin-bottom: 40px;
         }
 
-        .hero-btn {
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .hero-btn-primary {
             padding: 14px 28px;
             background: #4f8cff;
             border-radius: 10px;
@@ -100,20 +108,127 @@
             font-size: 18px;
             font-weight: 600;
             text-decoration: none;
-            transition: 0.2s;
         }
 
-        .hero-btn:hover {
-            background: #3a6fcc;
+        .hero-btn-secondary {
+            padding: 14px 28px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.08);
         }
 
-        /* FOOTER */
-        footer {
-            margin-top: 160px;
+        /* PRICING SECTION */
+        .pricing-section {
             text-align: center;
-            color: #777;
-            font-size: 14px;
-            padding-bottom: 40px;
+            margin-bottom: 140px;
+        }
+
+        .pricing-section h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .pricing-section p {
+            font-size: 18px;
+            color: #cfcfcf;
+            margin-bottom: 60px;
+        }
+
+        .pricing-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            background: #111;
+            padding: 40px;
+            border-radius: 18px;
+            width: 320px;
+            border: 1px solid rgba(255,255,255,0.08);
+            text-align: left;
+        }
+
+        .pricing-card h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .price {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+        }
+
+        .pricing-card ul li {
+            margin-bottom: 10px;
+            color: #cfcfcf;
+            font-size: 15px;
+        }
+
+        .pricing-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #4f8cff;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* CLAIM SECTION */
+        .claim-section {
+            text-align: center;
+            margin-bottom: 160px;
+        }
+
+        .claim-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .claim-section p {
+            font-size: 18px;
+            color: #cfcfcf;
+            margin-bottom: 30px;
+        }
+
+        .claim-box {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .claim-input {
+            background: #111;
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 14px;
+            border-radius: 10px;
+            color: white;
+            width: 260px;
+            font-size: 16px;
+        }
+
+        .claim-btn {
+            padding: 14px 24px;
+            background: #4f8cff;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -122,7 +237,7 @@
 <!-- NAVBAR -->
 <div class="nav-wrapper">
     <nav>
-        <div class="logo">pausuu.xyz</div>
+        <a href="/" class="logo">pausuu.xyz</a>
 
         <div class="nav-links">
             <a href="/discover">Discover</a>
@@ -136,15 +251,63 @@
 
 <!-- HERO SECTION -->
 <div class="hero">
-    <h1>Build your own pausuu page</h1>
-    <p>Create a clean, modern profile page in seconds.</p>
-    <a class="hero-btn" href="/pricing">Get Started</a>
+    <h1>Your very own profile, one link.</h1>
+    <p>Link your socials, show your community badges, and share everything from one clean link. Free for everyone.</p>
+
+    <div class="hero-buttons">
+        <a href="/login" class="hero-btn-primary">Sign up</a>
+        <a href="/pricing" class="hero-btn-secondary">View pricing</a>
+    </div>
 </div>
 
-<!-- FOOTER -->
-<footer>
-    © 2024 pausuu.xyz — All rights reserved.
-</footer>
+<!-- PRICING SECTION -->
+<div class="pricing-section">
+    <h2>Simple pricing, no surprises.</h2>
+    <p>Start free. Boost to unlock name effects, custom fonts, glass tints, and more.</p>
+
+    <div class="pricing-grid">
+        <!-- FREE PLAN -->
+        <div class="pricing-card">
+            <h3>Free</h3>
+            <div class="price">$0 / forever</div>
+            <ul>
+                <li>Everything you need to get started</li>
+                <li>Basic customization</li>
+                <li>Profile analytics</li>
+                <li>Basic effects</li>
+                <li>Add your socials</li>
+            </ul>
+            <a href="/login" class="pricing-btn">Get started</a>
+        </div>
+
+        <!-- PREMIUM PLAN -->
+        <div class="pricing-card">
+            <h3>Premium</h3>
+            <div class="price">1 server boost</div>
+            <ul>
+                <li>Server Booster badge</li>
+                <li>Animated name effects</li>
+                <li>Custom name fonts</li>
+                <li>Glass tint themes</li>
+                <li>1–2 character usernames</li>
+                <li>Reduced cooldown</li>
+                <li>Hide username history</li>
+            </ul>
+            <a href="https://discord.com" class="pricing-btn">Boost Server</a>
+        </div>
+    </div>
+</div>
+
+<!-- CLAIM SECTION -->
+<div class="claim-section">
+    <h2>Ready to claim your page?</h2>
+    <p>Join thousands of creators sharing everything they do from a single link.</p>
+
+    <div class="claim-box">
+        <input class="claim-input" placeholder="username">
+        <a class="claim-btn" href="/login">Claim now</a>
+    </div>
+</div>
 
 <script>
 // Update navbar if logged in
