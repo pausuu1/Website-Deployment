@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>pausuu.xyz</title>
 
+    <style>
+        body {
+            margin: 0;
+            background: #0d0d0d;
+            color: white;
+            font-family: "Inter", Arial, sans-serif;
+        }
+
+        /* NAVBAR */
+        .nav {
+            width: 100%;
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #111;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-left {
+            font-size: 20px;
+            font-weight: 600;
+            color: #4f8cff;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-btn {
+            padding: 8px 16px;
+            background: #4f8cff;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: #3a6fcc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="nav-left" onclick="location.href='/'">pausuu.xyz</div>
+
+        <div class="nav-links">
+            <a href="/discover/">Discover</a>
+            <a href="/pricing/">Pricing</a>
+
+            <!-- This will switch between Dashboard and Sign In -->
+            <a id="authBtn" class="nav-btn"></a>
+        </div>
+    </div>
+
+<script>
+    // Check login state (simple localStorage flag)
+    const user = localStorage.getItem("user");
+
+    const authBtn = document.getElementById("authBtn");
+
+    if (user) {
+        authBtn.textContent = "Dashboard";
+        authBtn.href = "/dashboard/";
+    } else {
+        authBtn.textContent = "Sign in";
+        authBtn.href = "/login/"; // or your OAuth page
+    }
+</script>
+
+</body>
+</html>
