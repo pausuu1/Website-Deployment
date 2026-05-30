@@ -12,7 +12,7 @@
             color: white;
         }
 
-        /* Centers the navbar */
+        /* Centers the navbar container */
         .nav-wrapper {
             width: 100%;
             display: flex;
@@ -20,34 +20,32 @@
             margin-top: 24px;
         }
 
-        /* EXACT screenshot geometry */
+        /* The floating rounded navbar */
         .nav {
-            width: 720px; /* fixed width — screenshot accurate */
+            width: 800px; /* screenshot-accurate width */
             background: #111;
-            padding: 10px 20px; /* tighter vertical padding */
-            border-radius: 16px; /* smoother pill shape */
+            padding: 10px 18px;
+            border-radius: 14px;
             border: 1px solid rgba(255,255,255,0.06);
 
             display: flex;
             align-items: center;
-            gap: 32px; /* more breathing room */
         }
 
-        /* LEFT */
-        .nav-left {
+        /* LEFT GROUP */
+        .nav-left-group {
+            display: flex;
+            align-items: center;
+            gap: 26px; /* spacing between logo, Discover, Pricing */
+        }
+
+        .nav-left-group div {
             font-size: 15px;
-            font-weight: 500; /* lighter weight like screenshot */
-            color: white;
+            font-weight: 500;
             cursor: pointer;
         }
 
-        /* CENTER */
-        .nav-center {
-            display: flex;
-            gap: 26px;
-        }
-
-        .nav-center a {
+        .nav-left-group a {
             color: #ccc;
             text-decoration: none;
             font-size: 14px;
@@ -55,16 +53,15 @@
             transition: 0.2s;
         }
 
-        .nav-center a:hover {
+        .nav-left-group a:hover {
             color: white;
         }
 
-        /* RIGHT */
+        /* RIGHT SIDE */
         .nav-right {
             margin-left: auto;
         }
 
-        /* Blue button */
         .nav-btn {
             padding: 6px 16px;
             background: #4f8cff;
@@ -87,18 +84,14 @@
     <div class="nav-wrapper">
         <div class="nav">
 
-            <!-- LEFT -->
-            <div class="nav-left" onclick="location.href='/'">
-                pausuu.xyz
-            </div>
-
-            <!-- CENTER -->
-            <div class="nav-center">
+            <!-- LEFT GROUP -->
+            <div class="nav-left-group">
+                <div onclick="location.href='/'">pausuu.xyz</div>
                 <a href="/discover/">Discover</a>
                 <a href="/pricing/">Pricing</a>
             </div>
 
-            <!-- RIGHT -->
+            <!-- RIGHT BUTTON -->
             <div class="nav-right">
                 <a id="authBtn" class="nav-btn"></a>
             </div>
