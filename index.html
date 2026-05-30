@@ -20,23 +20,23 @@
             margin-top: 24px;
         }
 
-        /* EXACT width like the screenshot */
+        /* EXACT screenshot geometry */
         .nav {
-            width: 620px; /* fixed width — screenshot accurate */
+            width: 720px; /* fixed width — screenshot accurate */
             background: #111;
-            padding: 12px 22px;
-            border-radius: 14px;
-            border: 1px solid rgba(255,255,255,0.08);
+            padding: 10px 20px; /* tighter vertical padding */
+            border-radius: 16px; /* smoother pill shape */
+            border: 1px solid rgba(255,255,255,0.06);
 
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 32px; /* more breathing room */
         }
 
         /* LEFT */
         .nav-left {
             font-size: 15px;
-            font-weight: 600;
+            font-weight: 500; /* lighter weight like screenshot */
             color: white;
             cursor: pointer;
         }
@@ -44,13 +44,14 @@
         /* CENTER */
         .nav-center {
             display: flex;
-            gap: 22px;
+            gap: 26px;
         }
 
         .nav-center a {
             color: #ccc;
             text-decoration: none;
             font-size: 14px;
+            font-weight: 400;
             transition: 0.2s;
         }
 
