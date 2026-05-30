@@ -11,6 +11,9 @@
         body {
             margin: 0;
             background: #0c0c0c;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             font-family: "Inter", sans-serif;
             color: white;
             height: 100vh;
@@ -89,29 +92,11 @@
 
         .profile-card {
             width: 380px;
-            background: #111;
+            background: rgba(17,17,17,0.9);
             border-radius: 22px;
             padding: 26px 22px 22px 22px;
             border: 1px solid rgba(255,255,255,0.06);
             box-shadow: 0 18px 45px rgba(0,0,0,0.6);
-            position: relative;
-        }
-
-        .profile-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            background-size: cover;
-            background-position: center;
-            opacity: 0.18;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .profile-inner {
-            position: relative;
-            z-index: 1;
         }
 
         .profile-header {
@@ -201,11 +186,6 @@
             color: white;
         }
 
-        .inline-btn-boost {
-            background: #FF73FA;
-            color: white;
-        }
-
         .footer-info {
             margin-top: 18px;
             font-size: 11px;
@@ -224,13 +204,6 @@
             justify-content: space-between;
             align-items: center;
             margin-top: 4px;
-        }
-
-        .link-item span {
-            max-width: 230px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
         }
 
         .link-remove {
@@ -266,46 +239,44 @@
         </div>
 
         <div class="profile-wrapper">
-            <div class="profile-card" id="profileCard">
-                <div class="profile-inner">
-                    <div class="profile-header">
-                        <div class="avatar" id="avatar"></div>
-                        <div>
-                            <div class="username" id="username">username</div>
-                            <div class="bio" id="bio" contenteditable="true">Add a short bio</div>
-                        </div>
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar" id="avatar"></div>
+                    <div>
+                        <div class="username" id="username">username</div>
+                        <div class="bio" id="bio" contenteditable="true">Add a short bio</div>
                     </div>
+                </div>
 
-                    <div class="section">
-                        <div class="section-label-row">
-                            <div class="section-title">Song</div>
-                        </div>
-                        <div class="section-box" id="songBox">
-                            <span id="songStatus">No song yet</span>
-                            <div class="song-name" id="songName"></div>
-                        </div>
-                        <button class="inline-btn inline-btn-primary" id="songBtn">Pick song</button>
+                <div class="section">
+                    <div class="section-label-row">
+                        <div class="section-title">Song</div>
                     </div>
+                    <div class="section-box">
+                        <span id="songStatus">No song yet</span>
+                        <div class="song-name" id="songName"></div>
+                    </div>
+                    <button class="inline-btn inline-btn-primary" id="songBtn">Pick song</button>
+                </div>
 
-                    <div class="section">
-                        <div class="section-label-row">
-                            <div class="section-title">Links</div>
-                            <div class="section-count" id="linksCount">0 / 8</div>
-                        </div>
-                        <div class="section-box">
-                            <div id="linksEmpty">No links yet</div>
-                            <div class="section-helper" id="linksHelper">
-                                Add your first link below to show it on your profile.
-                            </div>
-                            <div class="links-list" id="linksList"></div>
-                        </div>
-                        <button class="inline-btn inline-btn-primary" id="addLinkBtn">+ Add link</button>
+                <div class="section">
+                    <div class="section-label-row">
+                        <div class="section-title">Links</div>
+                        <div class="section-count" id="linksCount">0 / 8</div>
                     </div>
+                    <div class="section-box">
+                        <div id="linksEmpty">No links yet</div>
+                        <div class="section-helper" id="linksHelper">
+                            Add your first link below to show it on your profile.
+                        </div>
+                        <div class="links-list" id="linksList"></div>
+                    </div>
+                    <button class="inline-btn inline-btn-primary" id="addLinkBtn">+ Add link</button>
+                </div>
 
-                    <div class="footer-info">
-                        <span id="viewsText">0 views</span>
-                        <span id="joinedText">Joined May 2026</span>
-                    </div>
+                <div class="footer-info">
+                    <span>0 views</span>
+                    <span>Joined May 2026</span>
                 </div>
             </div>
         </div>
@@ -321,8 +292,14 @@
 const user = JSON.parse(localStorage.getItem("user"));
 const username = localStorage.getItem("username");
 
-if (!user) {
-    window.location.href = "/login";
+if (!user) window.location.href = "/login";
+
+document.getElementById("username").textContent = username || user.username;
+
+const avatarEl = document.getElementById("avatar");
+if (user.avatar) {
+    avatarEl.style.backgroundImage =
+        `url(https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=128)`;
 }
 
 const state = {
@@ -333,10 +310,7 @@ const state = {
     links: []
 };
 
-const usernameEl = document.getElementById("username");
-const avatarEl = document.getElementById("avatar");
 const bioEl = document.getElementById("bio");
-const profileCardEl = document.getElementById("profileCard");
 const bgBtn = document.getElementById("bgBtn");
 const bgInput = document.getElementById("bgInput");
 const songBtn = document.getElementById("songBtn");
@@ -352,14 +326,6 @@ const saveBtn = document.getElementById("saveBtn");
 const discardBtn = document.getElementById("discardBtn");
 const previewBtn = document.getElementById("previewBtn");
 
-// basic user info
-usernameEl.textContent = username || user.username;
-if (user && user.avatar) {
-    avatarEl.style.backgroundImage =
-        `url(https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=128)`;
-}
-
-// load saved state
 function loadState() {
     const saved = JSON.parse(localStorage.getItem("profileData") || "{}");
 
@@ -372,62 +338,12 @@ function loadState() {
     bioEl.textContent = state.bio;
 
     if (state.background) {
-        profileCardEl.style.setProperty("--bg-image", `url(${state.background})`);
-        profileCardEl.style.setProperty("background-image", "none");
-        profileCardEl.style.setProperty("position", "relative");
-        profileCardEl.style.setProperty("overflow", "hidden");
-        profileCardEl.querySelector("::before");
-        profileCardEl.style.setProperty("--bg-image", `url(${state.background})`);
-        profileCardEl.style.setProperty("background-color", "#111");
-        profileCardEl.style.setProperty("background-blend-mode", "normal");
-        profileCardEl.style.setProperty("background-size", "cover");
-        profileCardEl.style.setProperty("background-position", "center");
-        profileCardEl.style.setProperty("background-repeat", "no-repeat");
-        profileCardEl.style.setProperty("background-origin", "border-box");
-        profileCardEl.style.setProperty("background-clip", "border-box");
-        profileCardEl.style.setProperty("background-image", "none");
-        profileCardEl.style.setProperty("background-color", "#111");
-        profileCardEl.style.setProperty("background-blend-mode", "normal");
-        profileCardEl.style.setProperty("background-size", "cover");
-        profileCardEl.style.setProperty("background-position", "center");
-        profileCardEl.style.setProperty("background-repeat", "no-repeat");
-        profileCardEl.style.setProperty("background-origin", "border-box");
-        profileCardEl.style.setProperty("background-clip", "border-box");
-        profileCardEl.style.setProperty("background-image", "none");
-        profileCardEl.style.setProperty("background-color", "#111");
-        profileCardEl.style.setProperty("background-blend-mode", "normal");
-        profileCardEl.style.setProperty("background-size", "cover");
-        profileCardEl.style.setProperty("background-position", "center");
-        profileCardEl.style.setProperty("background-repeat", "no-repeat");
-        profileCardEl.style.setProperty("background-origin", "border-box");
-        profileCardEl.style.setProperty("background-clip", "border-box");
-        profileCardEl.style.setProperty("background-image", "none");
-        profileCardEl.style.setProperty("background-color", "#111");
-        profileCardEl.style.setProperty("background-blend-mode", "normal");
-        profileCardEl.style.setProperty("background-size", "cover");
-        profileCardEl.style.setProperty("background-position", "center");
-        profileCardEl.style.setProperty("background-repeat", "no-repeat");
-        profileCardEl.style.setProperty("background-origin", "border-box");
-        profileCardEl.style.setProperty("background-clip", "border-box");
-        profileCardEl.style.setProperty("background-image", "none");
-        profileCardEl.style.setProperty("background-color", "#111");
-        profileCardEl.style.setProperty("background-blend-mode", "normal");
-        profileCardEl.style.setProperty("background-size", "cover");
-        profileCardEl.style.setProperty("background-position", "center");
-        profileCardEl.style.setProperty("background-repeat", "no-repeat");
-        profileCardEl.style.setProperty("background-origin", "border-box");
-        profileCardEl.style.setProperty("background-clip", "border-box");
-        profileCardEl.style.setProperty("background-image", "none");
-        profileCardEl.style.setProperty("background-color", "#111");
-        profileCardEl.style.setProperty("background-blend-mode", "normal");
-        profileCardEl.style.setProperty("background-size", "cover");
-        profileCardEl.style.setProperty("background-position", "center");
-        profileCardEl.style.setProperty("background-repeat", "no-repeat");
+        document.body.style.backgroundImage = `url(${state.background})`;
     }
 
     if (state.songData) {
         songStatusEl.textContent = "Song selected";
-        songNameEl.textContent = state.songName || "Custom song";
+        songNameEl.textContent = state.songName;
     } else {
         songStatusEl.textContent = "No song yet";
         songNameEl.textContent = "";
@@ -438,56 +354,53 @@ function loadState() {
 
 function renderLinks() {
     linksListEl.innerHTML = "";
-    if (!state.links || state.links.length === 0) {
+
+    if (state.links.length === 0) {
         linksEmptyEl.style.display = "block";
         linksHelperEl.style.display = "block";
     } else {
         linksEmptyEl.style.display = "none";
         linksHelperEl.style.display = "none";
-        state.links.forEach((link, index) => {
-            const row = document.createElement("div");
-            row.className = "link-item";
-            const span = document.createElement("span");
-            span.textContent = `${link.label} – ${link.url}`;
-            const remove = document.createElement("span");
-            remove.className = "link-remove";
-            remove.textContent = "remove";
-            remove.onclick = () => {
-                state.links.splice(index, 1);
-                renderLinks();
-            };
-            row.appendChild(span);
-            row.appendChild(remove);
-            linksListEl.appendChild(row);
-        });
     }
+
+    state.links.forEach((link, index) => {
+        const row = document.createElement("div");
+        row.className = "link-item";
+
+        row.innerHTML = `
+            <span>${link.label} – ${link.url}</span>
+            <span class="link-remove" data-index="${index}">remove</span>
+        `;
+
+        row.querySelector(".link-remove").onclick = () => {
+            state.links.splice(index, 1);
+            renderLinks();
+        };
+
+        linksListEl.appendChild(row);
+    });
+
     linksCountEl.textContent = `${state.links.length} / 8`;
 }
 
-// background upload
 bgBtn.onclick = () => bgInput.click();
 bgInput.onchange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
+
     const reader = new FileReader();
     reader.onload = () => {
         state.background = reader.result;
-        profileCardEl.style.setProperty("background-image", `url(${state.background})`);
-        profileCardEl.style.backgroundSize = "cover";
-        profileCardEl.style.backgroundPosition = "center";
+        document.body.style.backgroundImage = `url(${state.background})`;
     };
     reader.readAsDataURL(file);
 };
 
-// song upload
 songBtn.onclick = () => songInput.click();
 songInput.onchange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
-    if (!file.type.startsWith("audio/")) {
-        alert("Please select an MP3 file.");
-        return;
-    }
+
     const reader = new FileReader();
     reader.onload = () => {
         state.songData = reader.result;
@@ -498,26 +411,23 @@ songInput.onchange = (e) => {
     reader.readAsDataURL(file);
 };
 
-// add link
 addLinkBtn.onclick = () => {
-    if (state.links.length >= 8) {
-        alert("You reached the maximum of 8 links.");
-        return;
-    }
-    const label = prompt("Platform / label (e.g. YouTube, Twitter):");
+    if (state.links.length >= 8) return alert("Max 8 links");
+
+    const label = prompt("Platform name:");
     if (!label) return;
-    const url = prompt("URL (https://...):");
+
+    const url = prompt("URL:");
     if (!url) return;
+
     state.links.push({ label, url });
     renderLinks();
 };
 
-// bio
 bioEl.addEventListener("input", () => {
     state.bio = bioEl.textContent.trim() || "Add a short bio";
 });
 
-// save
 saveBtn.onclick = () => {
     const payload = {
         bio: state.bio,
@@ -526,17 +436,16 @@ saveBtn.onclick = () => {
         songName: state.songName,
         links: state.links
     };
+
     localStorage.setItem("profileData", JSON.stringify(payload));
-    alert("Changes saved.");
+    alert("Saved!");
 };
 
-// discard
 discardBtn.onclick = () => {
     loadState();
-    alert("Changes discarded.");
+    alert("Changes discarded");
 };
 
-// preview
 previewBtn.onclick = () => {
     const name = username || user.username;
     window.open(`/${name}`, "_blank");
