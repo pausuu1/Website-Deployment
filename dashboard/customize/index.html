@@ -13,64 +13,19 @@
             background: #0c0c0c;
             font-family: "Inter", sans-serif;
             color: white;
-            display: flex;
             height: 100vh;
             overflow: hidden;
         }
 
-        /* SIDEBAR */
-        .sidebar {
-            width: 240px;
-            background: #111;
-            border-right: 1px solid rgba(255,255,255,0.06);
-            padding: 30px 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 22px;
-        }
-
-        .sidebar-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #e5e5e5;
-        }
-
-        .sidebar a {
-            text-decoration: none;
-            color: #cfcfcf;
-            font-size: 15px;
-            padding: 10px 14px;
-            border-radius: 8px;
-            transition: 0.2s;
-            display: block;
-        }
-
-        .sidebar a:hover {
-            background: #1a1a1a;
-            color: white;
-        }
-
-        .active {
-            background: #4f8cff;
-            color: white !important;
-        }
-
-        .logout {
-            margin-top: auto;
-            color: #ff6b6b !important;
-        }
-
-        /* MAIN AREA */
+        /* MAIN WRAPPER */
         .main {
-            flex: 1;
             padding: 32px 48px;
+            height: 100%;
             overflow-y: auto;
-            position: relative;
         }
 
         .content {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -131,7 +86,7 @@
         /* PROFILE CARD */
         .profile-wrapper {
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             margin-top: 10px;
         }
 
@@ -240,20 +195,6 @@
 </head>
 <body>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-    <div class="sidebar-title">Account</div>
-
-    <a href="/dashboard">Account</a>
-    <a class="active">Customize</a>
-    <a href="/dashboard/referral">Referral</a>
-    <a href="/dashboard/premium">Premium</a>
-    <a href="/dashboard/settings">Settings</a>
-
-    <a class="logout" href="#" onclick="logout()">Log out</a>
-</div>
-
-<!-- MAIN CONTENT -->
 <div class="main">
     <div class="content">
 
