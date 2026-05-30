@@ -1,457 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customize – pausuu.xyz</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Customize Profile</title>
 
     <style>
         body {
             margin: 0;
-            background: #0c0c0c;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            font-family: "Inter", sans-serif;
+            background: #000;
             color: white;
-            height: 100vh;
-            overflow: hidden;
+            font-family: Arial, sans-serif;
+            padding: 30px;
         }
 
-        .main {
-            padding: 32px 48px;
-            height: 100%;
-            overflow-y: auto;
-        }
-
-        .content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .top-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 26px;
-        }
-
-        .top-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 15px;
-            font-weight: 500;
-            color: #cfcfcf;
-        }
-
-        .back-arrow {
-            font-size: 18px;
-            cursor: pointer;
-            opacity: 0.8;
-        }
-
-        .top-right {
-            display: flex;
-            gap: 10px;
-        }
-
-        .btn {
-            padding: 8px 16px;
-            border-radius: 999px;
-            font-weight: 500;
-            text-decoration: none;
-            font-size: 13px;
-            border: 1px solid rgba(255,255,255,0.12);
-            background: #1a1a1a;
-            color: #e5e5e5;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: #222;
-        }
-
-        .btn-primary {
-            background: #4f8cff;
-            border-color: #4f8cff;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #3a6fcc;
-        }
-
-        .profile-wrapper {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .profile-card {
+        .card {
             width: 380px;
-            background: rgba(17,17,17,0.9);
-            border-radius: 22px;
-            padding: 26px 22px 22px 22px;
-            border: 1px solid rgba(255,255,255,0.06);
-            box-shadow: 0 18px 45px rgba(0,0,0,0.6);
-        }
-
-        .profile-header {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 14px;
+            margin: 0 auto;
+            background: #111;
+            padding: 20px;
+            border-radius: 16px;
         }
 
         .avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 999px;
-            background: #222;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
             background-size: cover;
             background-position: center;
+            margin-bottom: 10px;
         }
 
-        .username {
-            font-size: 19px;
-            font-weight: 600;
-        }
-
-        .bio {
-            font-size: 13px;
-            color: #a9a9a9;
-            margin-top: 4px;
-            cursor: text;
-        }
-
-        .bio[contenteditable="true"] {
-            outline: none;
-            border-bottom: 1px dashed rgba(255,255,255,0.2);
-        }
-
-        .section {
-            margin-top: 18px;
-        }
-
-        .section-label-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 6px;
-        }
-
-        .section-title {
-            font-size: 13px;
-            font-weight: 600;
-            color: #dcdcdc;
-        }
-
-        .section-count {
-            font-size: 12px;
-            color: #8f8f8f;
-        }
-
-        .section-box {
-            background: #151515;
-            border-radius: 12px;
-            padding: 10px 12px;
-            border: 1px solid rgba(255,255,255,0.06);
-            font-size: 13px;
-            color: #b8b8b8;
-        }
-
-        .section-helper {
-            margin-top: 6px;
-            font-size: 12px;
-            color: #8f8f8f;
-        }
-
-        .inline-btn {
-            margin-top: 8px;
-            padding: 7px 14px;
-            border-radius: 999px;
-            font-size: 12px;
-            font-weight: 500;
+        button {
+            margin-top: 10px;
+            padding: 10px 16px;
+            border-radius: 8px;
             border: none;
             cursor: pointer;
-            background: #2b2b35;
-            color: #e5e5e5;
-        }
-
-        .inline-btn-primary {
             background: #4f8cff;
             color: white;
         }
 
-        .footer-info {
-            margin-top: 18px;
-            font-size: 11px;
-            color: #8f8f8f;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .links-list {
-            margin-top: 8px;
-            font-size: 12px;
-        }
-
         .link-item {
+            margin-top: 6px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-top: 4px;
         }
 
-        .link-remove {
-            font-size: 11px;
+        .remove {
             color: #ff6b6b;
             cursor: pointer;
         }
 
-        .song-name {
-            margin-top: 6px;
-            font-size: 12px;
-            color: #cfcfcf;
+        input[type="file"] {
+            display: none;
         }
     </style>
 </head>
 <body>
 
-<div class="main">
-    <div class="content">
+<h2 style="text-align:center;">Customize Your Profile</h2>
 
-        <div class="top-row">
-            <div class="top-left">
-                <span class="back-arrow" onclick="window.location.href='/dashboard'">←</span>
-                <span>Editing your page</span>
-            </div>
+<div class="card">
 
-            <div class="top-right">
-                <button class="btn" id="previewBtn">Preview</button>
-                <button class="btn" id="discardBtn">Discard</button>
-                <button class="btn btn-primary" id="saveBtn">Save changes</button>
-                <button class="btn" id="bgBtn">Change background</button>
-            </div>
-        </div>
+    <div class="avatar" id="avatar"></div>
 
-        <div class="profile-wrapper">
-            <div class="profile-card">
-                <div class="profile-header">
-                    <div class="avatar" id="avatar"></div>
-                    <div>
-                        <div class="username" id="username">username</div>
-                        <div class="bio" id="bio" contenteditable="true">Add a short bio</div>
-                    </div>
-                </div>
+    <h3 id="username">username</h3>
 
-                <div class="section">
-                    <div class="section-label-row">
-                        <div class="section-title">Song</div>
-                    </div>
-                    <div class="section-box">
-                        <span id="songStatus">No song yet</span>
-                        <div class="song-name" id="songName"></div>
-                    </div>
-                    <button class="inline-btn inline-btn-primary" id="songBtn">Pick song</button>
-                </div>
+    <textarea id="bio" placeholder="Your bio..." style="width:100%;height:60px;"></textarea>
 
-                <div class="section">
-                    <div class="section-label-row">
-                        <div class="section-title">Links</div>
-                        <div class="section-count" id="linksCount">0 / 8</div>
-                    </div>
-                    <div class="section-box">
-                        <div id="linksEmpty">No links yet</div>
-                        <div class="section-helper" id="linksHelper">
-                            Add your first link below to show it on your profile.
-                        </div>
-                        <div class="links-list" id="linksList"></div>
-                    </div>
-                    <button class="inline-btn inline-btn-primary" id="addLinkBtn">+ Add link</button>
-                </div>
+    <h4>Background</h4>
+    <button onclick="bgInput.click()">Change Background</button>
+    <input type="file" id="bgInput" accept="image/*">
 
-                <div class="footer-info">
-                    <span>0 views</span>
-                    <span>Joined May 2026</span>
-                </div>
-            </div>
-        </div>
+    <h4>Song</h4>
+    <button onclick="songInput.click()">Upload MP3</button>
+    <input type="file" id="songInput" accept="audio/mp3,audio/mpeg">
+    <p id="songName" style="font-size:12px;color:#ccc;"></p>
 
-    </div>
+    <h4>Links</h4>
+    <div id="links"></div>
+    <button onclick="addLink()">+ Add Link</button>
+
+    <br><br>
+    <button onclick="save()">Save Changes</button>
+    <button style="background:#444;" onclick="discard()">Discard</button>
+    <button style="background:#222;" onclick="preview()">Preview</button>
+
 </div>
 
-<!-- hidden inputs -->
-<input type="file" id="bgInput" accept="image/png,image/jpeg,image/jpg" style="display:none">
-<input type="file" id="songInput" accept="audio/mpeg,audio/mp3" style="display:none">
-
 <script>
-const user = JSON.parse(localStorage.getItem("user"));
-const username = localStorage.getItem("username");
+    // Load Discord user (from your OAuth login)
+    const user = JSON.parse(localStorage.getItem("user"));
+    const username = localStorage.getItem("username") || user?.username || "unknown";
 
-if (!user) window.location.href = "/login";
+    document.getElementById("username").textContent = username;
 
-document.getElementById("username").textContent = username || user.username;
-
-const avatarEl = document.getElementById("avatar");
-if (user.avatar) {
-    avatarEl.style.backgroundImage =
-        `url(https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=128)`;
-}
-
-const state = {
-    bio: "",
-    background: null,
-    songData: null,
-    songName: "",
-    links: []
-};
-
-const bioEl = document.getElementById("bio");
-const bgBtn = document.getElementById("bgBtn");
-const bgInput = document.getElementById("bgInput");
-const songBtn = document.getElementById("songBtn");
-const songInput = document.getElementById("songInput");
-const songStatusEl = document.getElementById("songStatus");
-const songNameEl = document.getElementById("songName");
-const addLinkBtn = document.getElementById("addLinkBtn");
-const linksListEl = document.getElementById("linksList");
-const linksCountEl = document.getElementById("linksCount");
-const linksEmptyEl = document.getElementById("linksEmpty");
-const linksHelperEl = document.getElementById("linksHelper");
-const saveBtn = document.getElementById("saveBtn");
-const discardBtn = document.getElementById("discardBtn");
-const previewBtn = document.getElementById("previewBtn");
-
-function loadState() {
-    const saved = JSON.parse(localStorage.getItem("profileData") || "{}");
-
-    state.bio = saved.bio || "Add a short bio";
-    state.background = saved.background || null;
-    state.songData = saved.songData || null;
-    state.songName = saved.songName || "";
-    state.links = saved.links || [];
-
-    bioEl.textContent = state.bio;
-
-    if (state.background) {
-        document.body.style.backgroundImage = `url(${state.background})`;
+    if (user && user.avatar) {
+        document.getElementById("avatar").style.backgroundImage =
+            `url(https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=128)`;
     }
 
-    if (state.songData) {
-        songStatusEl.textContent = "Song selected";
-        songNameEl.textContent = state.songName;
-    } else {
-        songStatusEl.textContent = "No song yet";
-        songNameEl.textContent = "";
+    // State
+    let state = {
+        bio: "",
+        background: null,
+        songData: null,
+        songName: "",
+        links: []
+    };
+
+    // Load saved data
+    function load() {
+        const saved = JSON.parse(localStorage.getItem("profileData") || "{}");
+
+        state.bio = saved.bio || "";
+        state.background = saved.background || null;
+        state.songData = saved.songData || null;
+        state.songName = saved.songName || "";
+        state.links = saved.links || [];
+
+        document.getElementById("bio").value = state.bio;
+        document.getElementById("songName").textContent = state.songName;
+
+        renderLinks();
     }
 
-    renderLinks();
-}
+    function renderLinks() {
+        const box = document.getElementById("links");
+        box.innerHTML = "";
 
-function renderLinks() {
-    linksListEl.innerHTML = "";
-
-    if (state.links.length === 0) {
-        linksEmptyEl.style.display = "block";
-        linksHelperEl.style.display = "block";
-    } else {
-        linksEmptyEl.style.display = "none";
-        linksHelperEl.style.display = "none";
+        state.links.forEach((link, i) => {
+            const div = document.createElement("div");
+            div.className = "link-item";
+            div.innerHTML = `
+                <span>${link.label}</span>
+                <span class="remove" onclick="removeLink(${i})">remove</span>
+            `;
+            box.appendChild(div);
+        });
     }
 
-    state.links.forEach((link, index) => {
-        const row = document.createElement("div");
-        row.className = "link-item";
+    function addLink() {
+        const label = prompt("Platform name:");
+        if (!label) return;
 
-        row.innerHTML = `
-            <span>${link.label} – ${link.url}</span>
-            <span class="link-remove" data-index="${index}">remove</span>
-        `;
+        const url = prompt("URL:");
+        if (!url) return;
 
-        row.querySelector(".link-remove").onclick = () => {
-            state.links.splice(index, 1);
-            renderLinks();
+        state.links.push({ label, url });
+        renderLinks();
+    }
+
+    function removeLink(i) {
+        state.links.splice(i, 1);
+        renderLinks();
+    }
+
+    // Background upload
+    bgInput.onchange = e => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = () => {
+            state.background = reader.result;
+            alert("Background updated!");
         };
-
-        linksListEl.appendChild(row);
-    });
-
-    linksCountEl.textContent = `${state.links.length} / 8`;
-}
-
-bgBtn.onclick = () => bgInput.click();
-bgInput.onchange = (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = () => {
-        state.background = reader.result;
-        document.body.style.backgroundImage = `url(${state.background})`;
-    };
-    reader.readAsDataURL(file);
-};
-
-songBtn.onclick = () => songInput.click();
-songInput.onchange = (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = () => {
-        state.songData = reader.result;
-        state.songName = file.name;
-        songStatusEl.textContent = "Song selected";
-        songNameEl.textContent = file.name;
-    };
-    reader.readAsDataURL(file);
-};
-
-addLinkBtn.onclick = () => {
-    if (state.links.length >= 8) return alert("Max 8 links");
-
-    const label = prompt("Platform name:");
-    if (!label) return;
-
-    const url = prompt("URL:");
-    if (!url) return;
-
-    state.links.push({ label, url });
-    renderLinks();
-};
-
-bioEl.addEventListener("input", () => {
-    state.bio = bioEl.textContent.trim() || "Add a short bio";
-});
-
-saveBtn.onclick = () => {
-    const payload = {
-        bio: state.bio,
-        background: state.background,
-        songData: state.songData,
-        songName: state.songName,
-        links: state.links
+        reader.readAsDataURL(file);
     };
 
-    localStorage.setItem("profileData", JSON.stringify(payload));
-    alert("Saved!");
-};
+    // Song upload
+    songInput.onchange = e => {
+        const file = e.target.files[0];
+        if (!file) return;
 
-discardBtn.onclick = () => {
-    loadState();
-    alert("Changes discarded");
-};
+        const reader = new FileReader();
+        reader.onload = () => {
+            state.songData = reader.result;
+            state.songName = file.name;
+            document.getElementById("songName").textContent = file.name;
+        };
+        reader.readAsDataURL(file);
+    };
 
-previewBtn.onclick = () => {
-    const name = username || user.username;
-    window.open(`/${name}`, "_blank");
-};
+    // Save
+    function save() {
+        state.bio = document.getElementById("bio").value;
 
-loadState();
+        localStorage.setItem("profileData", JSON.stringify(state));
+        alert("Saved!");
+    }
+
+    // Discard
+    function discard() {
+        load();
+        alert("Changes discarded");
+    }
+
+    // Preview
+    function preview() {
+        window.open(`/profile?u=${username}`, "_blank");
+    }
+
+    load();
 </script>
 
 </body>
