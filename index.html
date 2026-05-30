@@ -250,14 +250,8 @@
 </div>
 
 <!-- HERO SECTION -->
-<div class="hero">
-    <h1>Your very own profile, one link.</h1>
-    <p>Link your socials, show your community badges, and share everything from one clean link. Free for everyone.</p>
-
-    <div class="hero-buttons">
-        <a href="/login" class="hero-btn-primary">Sign up</a>
-        <a href="/pricing" class="hero-btn-secondary">View pricing</a>
-    </div>
+<div class="hero" id="hero-section">
+    <!-- This will be replaced by JS depending on login state -->
 </div>
 
 <!-- PRICING SECTION -->
@@ -310,12 +304,38 @@
 </div>
 
 <script>
-// Update navbar if logged in
 const user = localStorage.getItem("user");
+
+// Update navbar button
+const navBtn = document.getElementById("nav-auth-btn");
 if (user) {
-    const btn = document.getElementById("nav-auth-btn");
-    btn.textContent = "Dashboard";
-    btn.href = "/dashboard";
+    navBtn.textContent = "Dashboard";
+    navBtn.href = "/dashboard";
+}
+
+// HERO SECTION SWITCHING
+const hero = document.getElementById("hero-section");
+
+if (user) {
+    hero.innerHTML = `
+        <h1>Your very own profile, one link.</h1>
+        <p>Link your socials, show your community badges, and share everything from one clean link. Free for everyone.</p>
+
+        <div class="hero-buttons">
+            <a href="/dashboard" class="hero-btn-primary">Dashboard</a>
+            <a href="/dashboard/customize" class="hero-btn-secondary">Customize profile</a>
+        </div>
+    `;
+} else {
+    hero.innerHTML = `
+        <h1>Your very own profile, one link.</h1>
+        <p>Link your socials, show your community badges, and share everything from one clean link. Free for everyone.</p>
+
+        <div class="hero-buttons">
+            <a href="/login" class="hero-btn-primary">Sign up</a>
+            <a href="/pricing" class="hero-btn-secondary">View pricing</a>
+        </div>
+    `;
 }
 </script>
 
