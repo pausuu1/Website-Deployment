@@ -230,6 +230,34 @@
             font-weight: 600;
             text-decoration: none;
         }
+
+        /* LOGGED-IN CLAIM BOX */
+        .manage-box {
+            background: #111;
+            padding: 40px;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.08);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .manage-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .manage-sub {
+            font-size: 16px;
+            color: #cfcfcf;
+            margin-bottom: 30px;
+        }
+
+        .manage-buttons {
+            display: flex;
+            gap: 12px;
+        }
     </style>
 </head>
 <body>
@@ -250,9 +278,7 @@
 </div>
 
 <!-- HERO SECTION -->
-<div class="hero" id="hero-section">
-    <!-- This will be replaced by JS depending on login state -->
-</div>
+<div class="hero" id="hero-section"></div>
 
 <!-- PRICING SECTION -->
 <div class="pricing-section">
@@ -260,7 +286,6 @@
     <p>Start free. Boost to unlock name effects, custom fonts, glass tints, and more.</p>
 
     <div class="pricing-grid">
-        <!-- FREE PLAN -->
         <div class="pricing-card">
             <h3>Free</h3>
             <div class="price">$0 / forever</div>
@@ -274,7 +299,6 @@
             <a href="/login" class="pricing-btn">Get started</a>
         </div>
 
-        <!-- PREMIUM PLAN -->
         <div class="pricing-card">
             <h3>Premium</h3>
             <div class="price">1 server boost</div>
@@ -293,15 +317,7 @@
 </div>
 
 <!-- CLAIM SECTION -->
-<div class="claim-section">
-    <h2>Ready to claim your page?</h2>
-    <p>Join thousands of creators sharing everything they do from a single link.</p>
-
-    <div class="claim-box">
-        <input class="claim-input" placeholder="username">
-        <a class="claim-btn" href="/login">Claim now</a>
-    </div>
-</div>
+<div class="claim-section" id="claim-section"></div>
 
 <script>
 const user = localStorage.getItem("user");
@@ -334,6 +350,33 @@ if (user) {
         <div class="hero-buttons">
             <a href="/login" class="hero-btn-primary">Sign up</a>
             <a href="/pricing" class="hero-btn-secondary">View pricing</a>
+        </div>
+    `;
+}
+
+// CLAIM SECTION SWITCHING
+const claim = document.getElementById("claim-section");
+
+if (user) {
+    claim.innerHTML = `
+        <div class="manage-box">
+            <div class="manage-title">Manage your profile</div>
+            <div class="manage-sub">Keep your page fresh and see how your profile is performing.</div>
+
+            <div class="manage-buttons">
+                <a href="/dashboard" class="hero-btn-primary">Dashboard</a>
+                <a href="/dashboard/customize" class="hero-btn-secondary">Customize profile</a>
+            </div>
+        </div>
+    `;
+} else {
+    claim.innerHTML = `
+        <h2>Ready to claim your page?</h2>
+        <p>Join thousands of creators sharing everything they do from a single link.</p>
+
+        <div class="claim-box">
+            <input class="claim-input" placeholder="username">
+            <a class="claim-btn" href="/login">Claim now</a>
         </div>
     `;
 }
