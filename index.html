@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pausuu.xyz</title>
 
-    <!-- Inter font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
@@ -13,13 +12,9 @@
             margin: 0;
             background: #0c0c0c;
             font-family: "Inter", sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             color: white;
         }
 
-        /* NAVBAR WRAPPER */
         .nav-wrapper {
             display: flex;
             justify-content: center;
@@ -27,7 +22,6 @@
             margin-top: 40px;
         }
 
-        /* NAVBAR */
         nav {
             background: #111;
             padding: 14px 28px;
@@ -39,14 +33,12 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.35);
         }
 
-        /* LOGO */
         .logo {
             font-size: 17px;
             font-weight: 600;
             color: #e5e5e5;
         }
 
-        /* NAV LINKS */
         .nav-links {
             display: flex;
             align-items: center;
@@ -66,21 +58,6 @@
             color: white;
         }
 
-        /* SEARCH ICON */
-        .search-icon {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-            margin-left: 6px;
-            opacity: 0.75;
-            transition: 0.2s;
-        }
-
-        .search-icon:hover {
-            opacity: 1;
-        }
-
-        /* SIGN UP BUTTON */
         .signup-btn {
             padding: 8px 20px;
             background: #4f8cff;
@@ -95,303 +72,34 @@
         .signup-btn:hover {
             background: #3a6fcc;
         }
-
-        /* HERO SECTION */
-        .hero {
-            text-align: center;
-            margin-top: 90px;
-            max-width: 700px;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 50px;
-            font-weight: 600;
-            color: white;
-            margin-bottom: 18px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #b3b3b3;
-            line-height: 1.6;
-            margin-bottom: 36px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-        }
-
-        .hero-btn-primary {
-            padding: 12px 28px;
-            background: #4f8cff;
-            border-radius: 10px;
-            color: white;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        .hero-btn-secondary {
-            padding: 12px 28px;
-            background: #1a1a1a;
-            border-radius: 10px;
-            color: white;
-            font-weight: 500;
-            text-decoration: none;
-            font-size: 16px;
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        /* PRICING SECTION */
-        .pricing {
-            margin-top: 120px;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .pricing h2 {
-            font-size: 38px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .pricing-sub {
-            font-size: 17px;
-            color: #b3b3b3;
-            margin-bottom: 60px;
-        }
-
-        .pricing-grid {
-            display: flex;
-            justify-content: center;
-            gap: 34px;
-            flex-wrap: wrap;
-        }
-
-        .price-card {
-            background: #111;
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px;
-            padding: 32px;
-            width: 310px;
-            text-align: left;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
-        }
-
-        .price-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .price {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 22px;
-        }
-
-        .price span {
-            font-size: 16px;
-            color: #b3b3b3;
-        }
-
-        .price-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 28px 0;
-        }
-
-        .price-card ul li {
-            margin-bottom: 12px;
-            color: #ccc;
-            font-size: 15px;
-        }
-
-        .price-btn {
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-            padding: 12px 0;
-            background: #4f8cff;
-            border-radius: 10px;
-            color: white;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 15px;
-        }
-
-        .premium {
-            border-color: rgba(255, 0, 128, 0.3);
-        }
-
-        .premium-btn {
-            background: #ff4fa3;
-        }
-
-        .verify-text {
-            margin-top: 12px;
-            font-size: 13px;
-            color: #b3b3b3;
-            text-align: center;
-        }
-
-        /* CLAIM SECTION */
-        .claim-section {
-            margin-top: 120px;
-            background: #111;
-            border-radius: 18px;
-            padding: 50px 40px;
-            width: 85%;
-            max-width: 900px;
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .claim-text h2 {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .claim-text p {
-            font-size: 17px;
-            color: #b3b3b3;
-            max-width: 420px;
-        }
-
-        .claim-input-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: #1a1a1a;
-            padding: 12px 16px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .claim-prefix {
-            color: #b3b3b3;
-            font-size: 15px;
-        }
-
-        .claim-input {
-            background: transparent;
-            border: none;
-            outline: none;
-            color: white;
-            font-size: 15px;
-            width: 140px;
-        }
-
-        .claim-btn {
-            padding: 12px 22px;
-            background: #4f8cff;
-            border-radius: 10px;
-            color: white;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 15px;
-            white-space: nowrap;
-        }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <div class="nav-wrapper">
-        <nav>
-            <div class="logo">pausuu.xyz</div>
+<div class="nav-wrapper">
+    <nav>
+        <div class="logo">pausuu.xyz</div>
 
-            <div class="nav-links">
-                <a href="https://pausuu.xyz/discover">Discover</a>
-                <a href="https://pausuu.xyz/recent">Recent</a>
-                <a href="https://pausuu.xyz/pricing">Pricing</a>
-            </div>
-
-            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="7"></circle>
-                <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
-            </svg>
-
-            <a class="signup-btn" href="https://pausuu.xyz/login">Sign up</a>
-        </nav>
-    </div>
-
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <h1>Your very own profile, one link.</h1>
-        <p>Link your socials, show your community badges, and share everything from one clean link. Free for everyone.</p>
-
-        <div class="hero-buttons">
-            <a class="hero-btn-primary" href="https://pausuu.xyz/login">Sign up</a>
-            <a class="hero-btn-secondary" href="https://pausuu.xyz/pricing">View pricing</a>
-        </div>
-    </section>
-
-    <!-- PRICING SECTION -->
-    <section class="pricing">
-        <h2>Simple pricing, no surprises.</h2>
-        <p class="pricing-sub">Start free. Upgrade to unlock custom themes, effects, and more.</p>
-
-        <div class="pricing-grid">
-
-            <!-- FREE PLAN -->
-            <div class="price-card">
-                <h3>Free</h3>
-                <p class="price">$0 <span>/ forever</span></p>
-
-                <ul>
-                    <li>Basic customization</li>
-                    <li>Profile analytics</li>
-                    <li>Basic effects</li>
-                    <li>Add your socials</li>
-                </ul>
-
-                <a class="price-btn" href="https://pausuu.xyz/login">Get started</a>
-            </div>
-
-            <!-- PREMIUM PLAN -->
-            <div class="price-card premium">
-                <h3>Premium</h3>
-                <p class="price">1 server boost</p>
-
-                <ul>
-                    <li>Premium badge on your profile</li>
-                    <li>Animated name effects</li>
-                    <li>Custom name fonts</li>
-                    <li>Glass tint themes</li>
-                    <li>1–2 character usernames</li>
-                    <li>Reduced cooldown</li>
-                    <li>Hide username history</li>
-                </ul>
-
-                <a class="price-btn premium-btn" href="https://discord.gg/SFe9hB6tS5">Boost Server</a>
-                <p class="verify-text">Already boosting? Verify in settings.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CLAIM SECTION -->
-    <section class="claim-section">
-        <div class="claim-text">
-            <h2>Ready to claim your page?</h2>
-            <p>Join thousands of creators sharing everything they do from a single link.</p>
+        <div class="nav-links">
+            <a href="/discover">Discover</a>
+            <a href="/recent">Recent</a>
+            <a href="/pricing">Pricing</a>
         </div>
 
-        <div class="claim-input-area">
-            <span class="claim-prefix">pausuu.xyz/</span>
-            <input class="claim-input" type="text" placeholder="username">
-            <a class="claim-btn" href="https://pausuu.xyz/login">Claim now</a>
-        </div>
-    </section>
+        <a class="signup-btn" id="nav-auth-btn" href="/login">Sign up</a>
+    </nav>
+</div>
+
+<!-- Your homepage content here -->
+
+<script>
+const user = localStorage.getItem("user");
+if (user) {
+    const btn = document.getElementById("nav-auth-btn");
+    btn.textContent = "Dashboard";
+    btn.href = "/dashboard";
+}
+</script>
 
 </body>
 </html>
