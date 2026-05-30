@@ -9,9 +9,9 @@
             margin: 0;
             background: #0d0d0d;
             font-family: "Inter", Arial, sans-serif;
+            color: white;
         }
 
-        /* NAVBAR CONTAINER */
         .nav {
             width: 100%;
             padding: 14px 26px;
@@ -22,15 +22,13 @@
             justify-content: space-between;
         }
 
-        /* LEFT SIDE (logo) */
         .nav-left {
             font-size: 18px;
             font-weight: 600;
-            color: #4f8cff;
+            color: #ffffff;
             cursor: pointer;
         }
 
-        /* CENTER LINKS */
         .nav-center {
             display: flex;
             gap: 26px;
@@ -47,26 +45,11 @@
             color: white;
         }
 
-        /* RIGHT SIDE */
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 18px;
         }
 
-        /* Search icon */
-        .search-icon {
-            font-size: 18px;
-            color: #ccc;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .search-icon:hover {
-            color: white;
-        }
-
-        /* Blue button (Dashboard / Sign in) */
         .nav-btn {
             padding: 8px 18px;
             background: #4f8cff;
@@ -74,6 +57,7 @@
             color: white;
             text-decoration: none;
             font-weight: 600;
+            font-size: 14px;
             transition: 0.2s;
         }
 
@@ -82,32 +66,28 @@
         }
     </style>
 </head>
-
 <body>
 
     <div class="nav">
-
-        <!-- LEFT -->
+        <!-- left -->
         <div class="nav-left" onclick="location.href='/'">
             pausuu.xyz
         </div>
 
-        <!-- CENTER -->
+        <!-- middle -->
         <div class="nav-center">
             <a href="/discover/">Discover</a>
             <a href="/pricing/">Pricing</a>
         </div>
 
-        <!-- RIGHT -->
+        <!-- right -->
         <div class="nav-right">
-            <div class="search-icon">🔍</div>
             <a id="authBtn" class="nav-btn"></a>
         </div>
-
     </div>
 
 <script>
-    // Check login state
+    // super simple "logged in" check
     const user = localStorage.getItem("user");
     const authBtn = document.getElementById("authBtn");
 
@@ -115,8 +95,8 @@
         authBtn.textContent = "Dashboard";
         authBtn.href = "/dashboard/";
     } else {
-        authBtn.textContent = "Sign in";
-        authBtn.href = "/login/";
+        authBtn.textContent = "Sign up";
+        authBtn.href = "/signup/"; // or your auth page
     }
 </script>
 
