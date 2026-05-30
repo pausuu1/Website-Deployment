@@ -15,6 +15,7 @@
             color: white;
         }
 
+        /* NAVBAR */
         .nav-wrapper {
             display: flex;
             justify-content: center;
@@ -72,10 +73,53 @@
         .signup-btn:hover {
             background: #3a6fcc;
         }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            margin-top: 120px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #cfcfcf;
+            margin-bottom: 40px;
+        }
+
+        .hero-btn {
+            padding: 14px 28px;
+            background: #4f8cff;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .hero-btn:hover {
+            background: #3a6fcc;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 160px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            padding-bottom: 40px;
+        }
     </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
 <div class="nav-wrapper">
     <nav>
         <div class="logo">pausuu.xyz</div>
@@ -90,7 +134,17 @@
     </nav>
 </div>
 
-<!-- Your homepage content here -->
+<!-- HERO SECTION -->
+<div class="hero">
+    <h1>Build your own pausuu page</h1>
+    <p>Create a clean, modern profile page in seconds.</p>
+    <a class="hero-btn" href="/pricing">Get Started</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2024 pausuu.xyz — All rights reserved.
+</footer>
 
 <script>
 // Update navbar if logged in
