@@ -1,104 +1,86 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>pausuu.xyz</title>
+<style>
+    body {
+        margin: 0;
+        background: #0d0d0d;
+        font-family: "Inter", Arial, sans-serif;
+        color: white;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            background: #0d0d0d;
-            font-family: "Inter", Arial, sans-serif;
-            color: white;
-        }
+    .nav-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 24px;
+    }
 
-        /* Centers the navbar container */
-        .nav-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-top: 24px;
-        }
+    /* Shorter + more rounded */
+    .nav {
+        width: 700px; /* decreased length */
+        background: #111;
+        padding: 8px 18px; /* slightly tighter height */
+        border-radius: 20px; /* more rounded */
+        border: 1px solid rgba(255,255,255,0.06);
 
-        /* Slightly shorter navbar */
-        .nav {
-            width: 760px; /* reduced from 800px */
-            background: #111;
-            padding: 10px 18px;
-            border-radius: 14px;
-            border: 1px solid rgba(255,255,255,0.06);
+        display: flex;
+        align-items: center;
+    }
 
-            display: flex;
-            align-items: center;
-        }
+    .nav-left {
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+    }
 
-        /* LEFT: logo only */
-        .nav-left {
-            font-size: 15px;
-            font-weight: 500;
-            cursor: pointer;
-        }
+    .nav-right-group {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 26px;
+    }
 
-        /* RIGHT GROUP: Discover, Pricing, Dashboard */
-        .nav-right-group {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            gap: 26px;
-        }
+    .nav-right-group a {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 400;
+        transition: 0.2s;
+    }
 
-        .nav-right-group a {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 400;
-            transition: 0.2s;
-        }
+    .nav-right-group a:hover {
+        color: white;
+    }
 
-        .nav-right-group a:hover {
-            color: white;
-        }
+    .nav-btn {
+        padding: 6px 16px;
+        background: #4f8cff;
+        border-radius: 10px; /* slightly more rounded button */
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        transition: 0.2s;
+    }
 
-        /* Blue button */
-        .nav-btn {
-            padding: 6px 16px;
-            background: #4f8cff;
-            border-radius: 8px;
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: 0.2s;
-        }
+    .nav-btn:hover {
+        background: #3a6fcc;
+    }
+</style>
 
-        .nav-btn:hover {
-            background: #3a6fcc;
-        }
-    </style>
-</head>
+<div class="nav-wrapper">
+    <div class="nav">
+        <div class="nav-left" onclick="location.href='/'">
+            pausuu.xyz
+        </div>
 
-<body>
-
-    <div class="nav-wrapper">
-        <div class="nav">
-
-            <!-- LEFT -->
-            <div class="nav-left" onclick="location.href='/'">
-                pausuu.xyz
-            </div>
-
-            <!-- RIGHT GROUP -->
-            <div class="nav-right-group">
-                <a href="/discover/">Discover</a>
-                <a href="/pricing/">Pricing</a>
-                <a id="authBtn" class="nav-btn"></a>
-            </div>
-
+        <div class="nav-right-group">
+            <a href="/discover/">Discover</a>
+            <a href="/pricing/">Pricing</a>
+            <a id="authBtn" class="nav-btn"></a>
         </div>
     </div>
+</div>
 
 <script>
-    // Simple login check
     const user = localStorage.getItem("user");
     const authBtn = document.getElementById("authBtn");
 
@@ -110,6 +92,3 @@
         authBtn.href = "/signup/";
     }
 </script>
-
-</body>
-</html>
