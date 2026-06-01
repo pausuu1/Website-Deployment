@@ -1,84 +1,166 @@
-<style>
-    body {
-        margin: 0;
-        background: #0d0d0d;
-        font-family: "Inter", Arial, sans-serif;
-        color: white;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pausuu.xyz</title>
 
-    .nav-wrapper {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 24px;
-    }
+    <style>
+        body {
+            margin: 0;
+            background: #0d0d0d;
+            font-family: "Inter", Arial, sans-serif;
+            color: white;
+        }
 
-    /* WAY less wide + tall + rounded */
-    .nav {
-        width: 520px; /* significantly reduced width */
-        background: #111;
-        padding: 12px 20px; /* taller */
-        border-radius: 26px; /* very rounded */
-        border: 1px solid rgba(255,255,255,0.06);
+        /* NAVBAR WRAPPER */
+        .nav-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 24px;
+        }
 
-        display: flex;
-        align-items: center;
-    }
+        /* NAVBAR — less wide, taller, more rounded */
+        .nav {
+            width: 520px; /* compact width */
+            background: #111;
+            padding: 12px 20px; /* taller */
+            border-radius: 26px; /* very rounded */
+            border: 1px solid rgba(255,255,255,0.06);
 
-    .nav-left {
-        font-size: 15px;
-        font-weight: 500;
-        cursor: pointer;
-    }
+            display: flex;
+            align-items: center;
+        }
 
-    .nav-right-group {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        gap: 22px; /* slightly tighter spacing */
-    }
+        /* LEFT SIDE */
+        .nav-left {
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+        }
 
-    .nav-right-group a {
-        color: #ccc;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 400;
-        transition: 0.2s;
-    }
+        /* RIGHT SIDE GROUP */
+        .nav-right-group {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
 
-    .nav-right-group a:hover {
-        color: white;
-    }
+        .nav-right-group a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            transition: 0.2s;
+        }
 
-    .nav-btn {
-        padding: 8px 18px;
-        background: #4f8cff;
-        border-radius: 12px;
-        color: white;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 14px;
-        transition: 0.2s;
-    }
+        .nav-right-group a:hover {
+            color: white;
+        }
 
-    .nav-btn:hover {
-        background: #3a6fcc;
-    }
-</style>
+        /* BUTTON */
+        .nav-btn {
+            padding: 8px 18px;
+            background: #4f8cff;
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.2s;
+        }
 
-<div class="nav-wrapper">
-    <div class="nav">
-        <div class="nav-left" onclick="location.href='/'">
-            pausuu.xyz
-        </div>
+        .nav-btn:hover {
+            background: #3a6fcc;
+        }
 
-        <div class="nav-right-group">
-            <a href="/discover/">Discover</a>
-            <a href="/pricing/">Pricing</a>
-            <a id="authBtn" class="nav-btn"></a>
+        /* HERO SECTION */
+        .hero {
+            margin-top: 60px;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: #b3b3b3;
+            margin-bottom: 28px;
+            line-height: 1.5;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .hero-btn {
+            padding: 10px 22px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero-btn-primary {
+            background: #4f8cff;
+            color: white;
+        }
+
+        .hero-btn-primary:hover {
+            background: #3a6fcc;
+        }
+
+        .hero-btn-secondary {
+            background: #000;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-btn-secondary:hover {
+            background: #111;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="nav-wrapper">
+        <div class="nav">
+            <div class="nav-left" onclick="location.href='/'">
+                pausuu.xyz
+            </div>
+
+            <div class="nav-right-group">
+                <a href="/discover/">Discover</a>
+                <a href="/pricing/">Pricing</a>
+                <a id="authBtn" class="nav-btn"></a>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <h1>Your very own profile, one link.</h1>
+        <p>Link your socials, show your community badges, and share everything from one clean link. Free for everyone.</p>
+
+        <div class="hero-buttons">
+            <a href="/signup/" class="hero-btn hero-btn-primary">Sign up</a>
+            <a href="/pricing/" class="hero-btn hero-btn-secondary">View pricing</a>
+        </div>
+    </div>
 
 <script>
     const user = localStorage.getItem("user");
@@ -92,3 +174,6 @@
         authBtn.href = "/signup/";
     }
 </script>
+
+</body>
+</html>
